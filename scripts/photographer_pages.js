@@ -227,7 +227,7 @@ export function displayMediaList() {
 
   displayMediaList.forEach((media) => {
     const mediaElement = media.createImg(currentPhotographer.getFolderName());
-    const cardsMedia = document.createElement("article");
+    const cardsMedia = document.createElement("section");
     const cardsMediaImg = document.createElement("a");
     const cardsMediaFooter = document.createElement("div");
     const cardsMediaTitle = document.createElement("p");
