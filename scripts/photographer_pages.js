@@ -255,6 +255,7 @@ export function displayMediaList() {
     heartLink.classList.add("heart-link");
     heartLink.setAttribute("aria-label", "Liker la photo");
     heartLink.setAttribute("role", "button");
+    cardsMediaImg.setAttribute("role", "button");
     heartLink.setAttribute("tabindex", "0");
     cardsMediaCompteurLike.setAttribute("tabindex", "0");
 
@@ -268,7 +269,7 @@ export function displayMediaList() {
     heart.classList.add("fa-heart");
 
     cardsMediaImg.href = "#";
-    cardsMediaImg.setAttribute("title", media.title);
+    cardsMediaImg.setAttribute("title", media.alt);
     cardsMediaImg.setAttribute("aria-describedby", "ouvrir le slider");
 
     cardsMediaTitle.textContent = `${media.title}`;
@@ -305,9 +306,16 @@ export function displayMediaList() {
       });
     }
     cardsMediaImg.addEventListener("click", (e) => e.preventDefault());
+
     cardsMediaImg.addEventListener("click", () =>
       displayLightbox(media, displayMediaList)
     );
+    cardsMediaImg.addEventListener("keydown", (e) => {
+      if (e.code === "Enter") {
+        displayLightbox(media, displayMediaList);
+        console.log(e);
+      }
+    });
     return filters;
   });
 }
