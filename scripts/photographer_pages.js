@@ -242,7 +242,7 @@ export function displayMediaList() {
     const heartLink = document.createElement("a");
     const heart = document.createElement("i");
     cardsMediaCompteurLike.setAttribute("aria-label", `likes`);
-    cardsMedia.setAttribute("role", "article");
+    cardsMedia.setAttribute("role", "link");
     cardsMedia.classList.add("cards-media");
     cardsMediaImg.classList.add("cards-media-img");
     cardsMediaImg.setAttribute("title", "ouvrir la lightbox");
