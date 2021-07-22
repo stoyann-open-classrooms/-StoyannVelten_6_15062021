@@ -120,7 +120,7 @@ function displayPhotographers() {
       "./sources/img/1_small/PhotographersID/" + photographer.portrait;
     const cardPhotographer = document.createElement("section");
     const cardPhotographerHeader = document.createElement("header");
-    const cardPhotographerFooter = document.createElement("footer");
+    const cardPhotographerFooter = document.createElement("nav");
     const cardLink = document.createElement("a");
     const cardImg = document.createElement("img");
     const cardTitle = document.createElement("h2");
