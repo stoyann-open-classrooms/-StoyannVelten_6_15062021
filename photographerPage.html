@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Reservez votre photographes Fisheye">
+    <title>Nos photographes</title>
+    <link rel="shortcut icon" href="./sources/logo/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./styles/main.css" />
+</head>
+
+<body id="body">
+    <!-- ________ Loader ________ -->
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+
+    <!-- ________ header ________ -->
+    <header>
+        <div class="header-top">
+            <a href="./index.html" class="logo" role="link" title="recharger la page" id="retour">
+                <img src="./sources/logo/logo.svg" alt="Logo fisheye" aria-labelledby="retour" />
+            </a>
+
+        </div>
+    </header>
+    <!-- ________ Main ________ -->
+    <main class="main">
+        <!-- ------ Contact modal ------ -->
+        <section class="contact-modal" role="dialog" aria-hidden="true" aria-label="contact-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Nom dsu photographe</h1>
+                    <button role="button" title="fermer la modale" class="close-btn"><i
+                            class="modal-close fas fa-times"></i></button>
+                </div>
+                <form class="modal-form" id="contact" role="document">
+                    <label for="prenom">Prénom</label>
+                    <input class="firstName-inp" id="prenom" type="text" maxlenght="24" name="first-Name"
+                        aria-label="Entrez votre prénom" />
+                    <span class="message-alert">Vous devez entrer votre prénom !</span>
+                    <label for="nom">Nom</label>
+                    <input class="lastName-inp" id="nom" type="text" maxlenght="24" name="last-Name"
+                        aria-label="Entrez votre nom" />
+                    <span class="message-alert">Vous devez entrer votre nom !</span>
+                    <label for="email">Email<br /></label>
+                    <input class="email-inp" id="email" type="email" name="email"
+                        aria-label="Entrez votre adresse Email" data-error="Vous devez entrer un Email valide !" />
+                    <span class="message-alert">Vous devez entrer un Email valide !
+                    </span>
+                    <label for="msg">Votre Message<br /></label>
+                    <textarea class="msg-inp" id="msg" type="text" name="message"
+                        aria-label="Entrez votre méssage"></textarea>
+                    <span class="message-alert">Votre devez entrer un message ! </span>
+                    <button class="submit-form" type="submit" value="Envoyer" name="Email"
+                        aria-label="Envoyer le message">
+                        Envoyer
+                    </button>
+                </form>
+            </div>
+        </section>
+        <!-- ------ Lightbox modal ------ -->
+        <div class="lightbox-modal" role="dialog" aria-hidden="true" aria-label="lightbox modal">
+            <div class="lightbox-content" role="slider">
+                <div class="container-slides"></div>
+                <div class="commandes">
+                    <button class="left" role="button" aria-label="media precedent">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="right" role="button" aria-label="media suivant">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="close" role="button" aria-label="Fermer" focus>
+                        <i class="fas fa-times close-lightbox-media"></i>
+                    </button>
+
+                    <h2 class="titre-media-lightbox">Ici le titre du média</h2>
+                </div>
+            </div>
+        </div>
+        <!-- ------ Banner photographe ------ -->
+        <section class="banner" role="banner"></section>
+
+        <!-- ------ Dropdown Menu ------ -->
+        <section class="filter">
+            <span id="trierPar">Trier par </span>
+            <div class="dropdownMenu">
+                <div class="filter-select">
+                    <a href role="button" class="filter-select__trigger" aria-controls="filter-options"
+                        aria-haspopup="listbox" aria-label="Trier par">
+                        <span>Popularité</span>
+                        <div class="arrow"></div>
+                    </a>
+                    <div class="filter-options-container" role="listbox">
+                        <a href class="filter-option selected" data-value="popularite" aria-selected="true"
+                            aria-label="Trier par popularité" role="option">Popularité</a>
+                        <a href class="filter-option" data-value="date" aria-selected="false"
+                            aria-label="Trier par date" role="option">Date</a>
+                        <a href class="filter-option" data-value="titre" aria-selected="false"
+                            aria-label="Trier par titre" role="option">Titre</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ------Cards media container ------ -->
+        <div class="cards-media-container"></div>
+        <button class="btn-modal-mobile" role="button">Contacter-moi</button>
+    </main>
+
+    <script src="./scripts/photographer_pages.js" type="module"></script>
+</body>
+
+</html>

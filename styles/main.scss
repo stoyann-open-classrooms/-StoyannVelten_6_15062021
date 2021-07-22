@@ -1,0 +1,24 @@
+@import "./reset";
+@import "./variables/variables";
+@import "./mixins/mixins";
+@import "./placeholder/placeholder";
+@import "./mixins/mixins";
+@import "./animations/animations";
+@import "./layouts/header";
+@import "./layouts/banner";
+@import "./modules/loader";
+@import "./modules/lightbox-media";
+@import "./modules/returnMain";
+@import "./modules/modale";
+@import "./modules/total_likes";
+@import "./modules/dropdown";
+@import "./modules/cards-medias";
+@import "./modules/photographer-cards";
+@import "./modules/tags";
+
+body {
+  color: $tertiary;
+}
+.no-scroll {
+  overflow: hidden;
+}

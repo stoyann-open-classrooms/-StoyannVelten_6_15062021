@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="decouvrez les photographes Fisheye">
+    <link rel="stylesheet" href="./styles/main.css" />
+    <title>Accueil FishEye</title>
+    <link rel="shortcut icon" href="./sources/logo/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+    <div class="content-global">
+        <!-- ________ Loader ________ -->
+        <div class="loader-container">
+            <div class="loader"></div>
+        </div>
+
+
+        <!-- ________ Header ________ -->
+        <header>
+            <div class="header-top">
+                <a href="./index.html" class="logo" role="link" title="recharger la page" id="retour">
+                    <img src="./sources/logo/logo.svg" alt="Logo fisheye" aria-labelledby="retour" />
+                </a>
+                <h1 class="big-tittle">Nos photographes</h1>
+            </div>
+            <nav class="tag-list" aria-label="photographer categories" role="navigation">
+                <!--  ________ Passez au contenu ________ -->
+                <a href="#" class="return-main" aria-label="Passez au contenu">
+                    <div class="return">Passez au contenu</div>
+                </a>
+
+            </nav>
+        </header>
+
+        <!-- ________ Main ________ -->
+
+        <main id="main" class="photographer-container"></main>
+
+        <script src="./scripts/main.js" type="module"></script>
+    </div>
+</body>
+
+</html>

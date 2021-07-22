@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: modale.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: modale.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module modale
+ */
+
+function openModalForm(currentPhotographer) {
+  const modalTitle = document.querySelector(".modal-title");
+  const btnModalMobile = document.querySelector(".btn-modal-mobile");
+  const bannerBtnTablet = document.querySelector(".banner-btn");
+  const contactModal = document.querySelector(".contact-modal");
+  const formFirstNameInp = document.querySelector(".firstName-inp");
+  const formLastNameInp = document.querySelector(".lastName-inp");
+  const formEmailInp = document.querySelector(".email-inp");
+  const formMsgInp = document.querySelector(".msg-inp");
+  const errorMessage = document.querySelectorAll(".message-alert");
+  const modalClose = document.querySelector(".modal-close");
+
+  let verifFirst;
+  let verifLast;
+  let verifMail;
+  let verifMsg;
+
+  modalTitle.innerHTML = `Contactez-Moi ${currentPhotographer.name} `;
+
+  //open modal
+  btnModalMobile.addEventListener("click", () => {
+    const body = document.getElementById("body");
+    console.log(body);
+
+    contactModal.style.display = "flex";
+    contactModal.setAttribute("aria-hidden", "false");
+    body.classList.add("no-scrool");
+    btnModalMobile.focus();
+  });
+  bannerBtnTablet.addEventListener("click", () => {
+    contactModal.style.display = "flex";
+    contactModal.setAttribute("aria-hidden", "false");
+    body.classList.remove("no-scrool");
+
+    bannerBtnTablet.focus();
+  });
+  formFirstNameInp.addEventListener("input", (e) => {
+    if (e.target.value.length &lt;= 3) {
+      errorMessage[0].style.display = "inline";
+      formFirstNameInp.classList.add("echec");
+      formFirstNameInp.classList.add("border");
+
+      setTimeout(() => {
+        formFirstNameInp.classList.remove("echec");
+        formFirstNameInp.classList.remove("border");
+      }, 500);
+      verifFirst = false;
+    } else {
+      errorMessage[0].style.display = "none";
+      verifFirst = true;
+    }
+  });
+  formLastNameInp.addEventListener("input", (e) => {
+    if (e.target.value.length &lt;= 3) {
+      errorMessage[1].style.display = "inline";
+      formLastNameInp.classList.add("echec");
+      formLastNameInp.classList.add("border");
+
+      setTimeout(() => {
+        formLastNameInp.classList.remove("echec");
+        formLastNameInp.classList.remove("border");
+      }, 500);
+      verifLast = false;
+    } else {
+      errorMessage[1].style.display = "none";
+      verifLast = true;
+    }
+  });
+  formEmailInp.addEventListener("input", (e) => {
+    const regexMail = /\S+@\S+\.\S+/;
+    if (e.target.value.search(regexMail) === 0) {
+      errorMessage[2].style.display = "none";
+      verifMail = true;
+    } else if (e.target.value.search(regexMail) === -1) {
+      errorMessage[2].style.display = "inline";
+      formEmailInp.classList.add("echec");
+      formEmailInp.classList.add("border");
+
+      setTimeout(() => {
+        formEmailInp.classList.remove("echec");
+        formEmailInp.classList.remove("border");
+      }, 500);
+      verifMail = false;
+    }
+  });
+
+  formMsgInp.addEventListener("input", (e) => {
+    if (e.target.value.length &lt;= 3) {
+      errorMessage[3].style.display = "inline";
+      formMsgInp.classList.add("echec");
+      formMsgInp.classList.add("border");
+
+      setTimeout(() => {
+        formMsgInp.classList.remove("echec");
+        formMsgInp.classList.remove("border");
+      }, 500);
+      verifMsg = false;
+    } else {
+      errorMessage[3].style.display = "none";
+      verifMsg = true;
+    }
+  });
+
+  // submit form
+  document.getElementById("contact").addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (
+      verifFirst === true &amp;&amp;
+      verifLast === true &amp;&amp;
+      verifMail === true &amp;&amp;
+      verifMsg === true
+    ) {
+      const modalValidationMsg = document.createElement("div");
+      const validationTxt = document.createElement("div");
+      const contactModal = document.querySelector(".modal-content");
+      const modalTitle = document.querySelector(".modal-title");
+      validationTxt.classList.add("validation-txt");
+      const bannerModal = document.querySelector("form");
+      bannerModal.style.display = "none";
+      modalTitle.style.display = "none";
+      modalValidationMsg.classList.add("modal-validation-msg");
+      modalValidationMsg.style.display = "flex";
+      contactModal.append(modalValidationMsg);
+      modalValidationMsg.append(validationTxt);
+      validationTxt.innerHTML = `Votre message a bien été envoyé à &lt;br> ${currentPhotographer.name} `;
+
+      let datas = new FormData(bannerModal);
+      for (let i of datas.entries()) {
+        console.log(i[0], ":", i[1]);
+      }
+    }
+  });
+  closeModal();
+
+  function closeModal() {
+    const contactModal = document.querySelector(".contact-modal");
+    modalClose.focus();
+
+    modalClose.addEventListener("click", () => {
+      contactModal.style.display = "none";
+      contactModal.setAttribute("aria-hidden", "true");
+    });
+  }
+}
+
+export { openModalForm };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-dropdown.html">dropdown</a></li><li><a href="module-main.html">main</a></li><li><a href="module-Medium-class.html">Medium-class</a></li><li><a href="module-MediumList.html">MediumList</a></li><li><a href="module-modale.html">modale</a></li><li><a href="module-Photographer-class.html">Photographer-class</a></li><li><a href="module-Photographer-List.html">Photographer-List</a></li><li><a href="module-photographer-pages.html">photographer-pages</a></li></ul><h3>Classes</h3><ul><li><a href="module-Medium-class.Medium.html">Medium</a></li><li><a href="module-MediumList.MediumList.html">MediumList</a></li><li><a href="module-Photographer-class.Photographers.html">Photographers</a></li><li><a href="module-Photographer-List.PhotographerList.html">PhotographerList</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue Jul 13 2021 17:04:52 GMT+1100 (heure des îles Salomon)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

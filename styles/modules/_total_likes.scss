@@ -1,0 +1,41 @@
+.total-likes-container {
+  display: none;
+  justify-content: space-around;
+  margin: auto;
+  align-items: center;
+  position: fixed;
+  padding: 0.5rem 1rem;
+  bottom: 0;
+  right: 5%;
+  background-color: $secondary-light;
+
+  height: auto;
+  width: auto;
+  border-radius: $radius $radius 0 0;
+  color: black;
+
+  .heart {
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    padding: 0.5rem;
+  }
+  @include bigPhone-and-higher {
+    display: flex;
+  }
+}
+.price-container {
+  margin-left: 5px;
+}
+.total-likes,
+.price {
+  font-weight: 500;
+  font-size: large;
+  text-align: center;
+}
+.heart-link {
+  cursor: pointer;
+}
+.heart-anim-big {
+  animation: pulse 2s linear;
+}

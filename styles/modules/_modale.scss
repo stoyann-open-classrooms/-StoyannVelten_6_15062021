@@ -1,0 +1,140 @@
+.btn-modal-mobile {
+  @extend %btn;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  max-width: 300px;
+  padding: 1rem;
+  font-size: 1.5rem;
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 2;
+
+  @include bigPhone-and-higher {
+    display: none;
+  }
+}
+
+.contact-modal {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  background: rgba($color: rgb(107, 107, 107), $alpha: 0.7);
+  overflow: auto;
+}
+
+.modal-content {
+  display: block;
+  background-color: $secondary-light;
+  margin: auto;
+  border: 0.1rem solid #888;
+  padding: 2rem;
+  height: 100%;
+  max-width: 480px;
+  border-radius: $radius;
+  animation: apparition-down 0.8s ease-in-out;
+  color: black;
+  input {
+    border-radius: $radius;
+    border: none;
+    height: 3rem;
+    outline: none;
+    padding: 0.5rem;
+  }
+  @include bigPhone-and-higher {
+    height: auto;
+    margin: auto;
+  }
+
+  .close-btn {
+    background-color: transparent;
+    border: none;
+
+    i {
+      font-size: 3rem;
+      color: white;
+      cursor: pointer;
+      position: relative;
+      top: -45%;
+    }
+  }
+
+  div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    h3 {
+      font-size: 3rem;
+      font-weight: 500;
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: 3rem;
+  }
+  label {
+    margin: 1rem 0;
+  }
+
+  textarea {
+    border-radius: $radius;
+    border: none;
+    height: 15rem;
+    outline: none;
+    padding: 0.5rem;
+  }
+  .submit-form {
+    background-color: $primary;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: $radius;
+    margin-top: 2rem;
+    width: 40%;
+    align-self: flex-start;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+    @include tablet-and-higher {
+      align-self: center;
+    }
+  }
+}
+.modal-validation-msg {
+  display: none;
+  margin: 0;
+  padding: 2rem;
+  height: 100%;
+  width: 100%;
+  font-size: 3rem;
+}
+.message-alert {
+  color: $primary;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  display: none;
+}
+.echec {
+  animation: echec 0.3s ease-in-out;
+}
+.border {
+  border: 0.3rem solid $primary !important;
+}
+.modal-title {
+  font-size: 3.3rem;
+  width: 70%;
+}

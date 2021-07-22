@@ -1,0 +1,28 @@
+{
+  "name": "p6-stoyann-",
+  "version": "1.0.0",
+  "description": "Openclassrooms - Parcours développeur Front-end",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "i": "^0.3.6"
+  },
+  "devDependencies": {
+    "eslint": "^7.31.0",
+    "jsdoc": "^3.6.7"
+  },
+  "scripts": {
+    "jsdoc": "jsdoc -c jsdoc.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stoyann-open-classrooms/StoyannVelten_6_15062021.git"
+  },
+  "author": "\"VELTEN Stoyann\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stoyann-open-classrooms/StoyannVelten_6_15062021/issues"
+  },
+  "homepage": "https://github.com/stoyann-open-classrooms/StoyannVelten_6_15062021#readme",
+  "keywords": []
+}

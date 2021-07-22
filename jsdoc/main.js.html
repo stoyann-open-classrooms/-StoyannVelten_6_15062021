@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: main.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: main.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module main
+ */
+
+import { Photographers } from "./Photographers.js";
+import { PhotographerList } from "./photographerList.js";
+/**
+ * name photographerList
+ * @type {array}
+ * @description Tableau contenant les objets instancier avec la class phhotographer
+ *
+ */
+const photographerList = new PhotographerList();
+
+/**
+ * name linkToData
+ * @type {string}
+ * @description le liens vers les données Json Fisheye
+ *
+ */
+
+const linkToData = "./data/FishEyeDataFR.json";
+
+const loader = document.querySelector(".loader-container");
+
+window.addEventListener("load", () => {
+  fetch(linkToData)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.log(`Une erreur de type ${response.status}  est survenu ! `);
+        setTimeout(function loaderAnim() {
+          loader.className += " hidden";
+        }, 2000);
+      }
+    })
+    .then((data) => createPhotographerList(data))
+    .then(displayPage);
+  setTimeout(function loaderAnim() {
+    loader.className += " hidden";
+  }, 2000);
+});
+
+/**
+ *créer un objet pour chaque photographe et les push dans un nouveaux tableau
+ * @param {string} data linkToData
+ * @returns {array}
+ */
+function createPhotographerList(data) {
+  data.photographers.forEach((photographer) => {
+    photographerList.addPhotographer(
+      new Photographers(
+        photographer.name,
+        photographer.id,
+        photographer.city,
+        photographer.country,
+        photographer.tags,
+        photographer.tagline,
+        photographer.price,
+        photographer.portrait
+      )
+    );
+  });
+  return PhotographerList;
+}
+
+function displayPage() {
+  displayTags();
+  displayPhotographers();
+  displayReturnMain();
+}
+
+// creation et affichages des tags (header) plus ajout toggle au cick
+function displayTags() {
+  const tagList = document.querySelector(".tag-list");
+
+  photographerList.getAllTags().forEach((tag) => {
+    const a = document.createElement("a");
+    const span = document.createElement("span");
+
+    span.id = `${tag}`;
+    span.textContent = "#" + tag;
+    span.classList.add("tags");
+
+    a.classList.add("tags-link");
+    a.href = "#";
+    a.setAttribute("aria-labelledby", `${tag}`);
+
+    tagList.append(a);
+    a.append(span);
+    //ajoute la classe tag--selected si le tag est selectionner par l'uttilisateur
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      a.classList.toggle("tag--selected");
+      displayPhotographers();
+    });
+  });
+}
+
+function displayPhotographers() {
+  const main = document.querySelector("#main");
+  /**
+   * name filters
+   * @type {array}
+   * @description tableau contenant les tags selectionner
+   *
+   */
+  const filters = [];
+
+  main.innerHTML = "";
+  document.querySelectorAll(".tag--selected").forEach((tagselected) => {
+    filters.push(tagselected.textContent.replace("#", ""));
+  });
+
+  photographerList.getPhotographerList(...filters).forEach((photographer) => {
+    const linkToPage = "photographerPage.html?id=" + photographer.id;
+    const linkToPhoto =
+      "./sources/img/PhotographersID/" + photographer.portrait;
+    const cardPhotographer = document.createElement("section");
+    const cardLink = document.createElement("a");
+    const cardImg = document.createElement("img");
+    const cardTitle = document.createElement("h2");
+    const cardBody = document.createElement("div");
+    const cardLocation = document.createElement("p");
+    const cardTagline = document.createElement("p");
+    const cardPrice = document.createElement("p");
+    const cardTags = document.createElement("nav");
+    const modalBg = document.createElement("form");
+
+    photographer.tags.forEach((el) => {
+      const tagsA = document.createElement("a");
+      const tagsspan = document.createElement("span");
+      cardTags.classList.add("cards-tags");
+      tagsspan.textContent = photographer.tags;
+      cardTags.append(tagsA);
+      tagsA.append(tagsspan);
+      tagsspan.textContent = "#" + el;
+      tagsA.classList.add("tags-link");
+      tagsspan.classList.add("tags");
+
+      tagsA.setAttribute("aria-labelledby", `${el}`);
+      cardTags.setAttribute("role", "navigation");
+
+      tagsA.href = linkToPage + "&amp;tag=" + el;
+    });
+
+    cardPhotographer.classList.add("photographer-cards");
+    cardImg.classList.add("cards-img");
+    cardTitle.classList.add("cards-title");
+    cardLocation.classList.add("cards-location");
+    cardLink.classList.add("cards-photographer-link");
+    cardTagline.classList.add("cards-tagline");
+    cardPrice.classList.add("cards-price");
+    modalBg.classList.add("modal");
+    cardBody.classList.add("cards-body");
+
+    cardLink.setAttribute("role", "link");
+    cardLink.href = linkToPage;
+    cardImg.src = linkToPhoto;
+    cardImg.alt = "";
+
+    cardTitle.textContent = photographer.name;
+    cardLocation.textContent = photographer.city + ", " + photographer.country;
+    cardTagline.textContent = photographer.tagline;
+    cardPrice.textContent = photographer.price + "€/Jour";
+
+    main.append(cardPhotographer);
+    cardLink.append(cardImg, cardTitle);
+    cardPhotographer.append(cardLink, cardBody);
+    cardBody.append(cardLocation, cardTagline, cardPrice, cardTags);
+  });
+}
+
+function displayReturnMain() {
+  const returnMain = document.querySelector(".return-main ");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 40) {
+      returnMain.style.display = "block";
+    } else {
+      returnMain.style.display = "none";
+    }
+  });
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-dropdown.html">dropdown</a></li><li><a href="module-main.html">main</a></li><li><a href="module-Medium-class.html">Medium-class</a></li><li><a href="module-MediumList.html">MediumList</a></li><li><a href="module-modale.html">modale</a></li><li><a href="module-Photographer-class.html">Photographer-class</a></li><li><a href="module-Photographer-List.html">Photographer-List</a></li><li><a href="module-photographer-pages.html">photographer-pages</a></li></ul><h3>Classes</h3><ul><li><a href="module-Medium-class.Medium.html">Medium</a></li><li><a href="module-MediumList.MediumList.html">MediumList</a></li><li><a href="module-Photographer-class.Photographers.html">Photographers</a></li><li><a href="module-Photographer-List.PhotographerList.html">PhotographerList</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue Jul 13 2021 17:04:52 GMT+1100 (heure des îles Salomon)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

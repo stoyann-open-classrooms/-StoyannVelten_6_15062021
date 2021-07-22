@@ -1,0 +1,52 @@
+%btn {
+  background-color: $primary;
+  color: white;
+  border: none;
+  transition: all 0.3s ease-in;
+  border-radius: $radius;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $secondary-light;
+    color: black;
+  }
+}
+
+%tags-link {
+  color: $primary;
+  border: 0.1rem solid #c4c4c4;
+  margin-top: 1rem;
+  margin-right: 0.6rem;
+  padding: 0.3rem 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+  @include tablet-and-higher {
+    font-size: 1.6rem;
+    margin-right: 1.3rem;
+  }
+  @include desktop-and-higher {
+    font-size: 1.9rem;
+  }
+}
+
+%tag--selected {
+  background-color: $primary;
+  color: white;
+}
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

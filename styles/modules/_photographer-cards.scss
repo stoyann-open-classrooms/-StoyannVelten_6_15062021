@@ -1,0 +1,76 @@
+.photographer-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+}
+
+.photographer-cards {
+  font-size: 1rem;
+  flex-direction: column;
+  margin: 5rem 0;
+  font-weight: 400;
+  .cards-photographer-link {
+    @extend %flex-center;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  @include tablet-and-higher {
+    margin: 5rem;
+  }
+  @include desktop-and-higher {
+    margin: 15rem;
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.cards-img {
+  height: 16rem;
+  width: 16rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.cards-body {
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  @include tablet-and-higher {
+    font-size: 1.6rem;
+  }
+}
+.cards-title {
+  margin-top: 0.8rem;
+  font-size: 3rem;
+  text-align: center;
+  color: $secondary;
+}
+.cards-location {
+  color: $primary;
+  margin-top: 0.5rem;
+
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+.cards-tagline {
+  text-align: center;
+}
+.cards-price {
+  margin-top: 0.5rem;
+}
+
+.cards-tags {
+  width: 18rem;
+  display: flex;
+  justify-content: center;
+}

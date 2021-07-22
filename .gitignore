@@ -1,0 +1,11 @@
+node_modules/
+.npm
+.eslintcache
+# Sass
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+### vscode ###
+.vscode

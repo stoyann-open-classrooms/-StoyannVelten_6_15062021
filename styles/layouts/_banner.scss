@@ -1,0 +1,86 @@
+.banner {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4%;
+
+  @include tablet-and-higher {
+    justify-content: center;
+    align-items: center;
+    background-color: $quadrary;
+    border-radius: $radius;
+    width: 95vw;
+    margin: auto;
+  }
+
+  .banner-body {
+    width: 70%;
+    animation: apparition 0.8s ease-in-out;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    @include bigPhone-and-higher {
+      font-size: 1.8rem;
+    }
+    @include tablet-and-higher {
+      font-size: 2rem;
+    }
+    @include desktop-and-higher {
+      font-size: 3rem;
+    }
+    .banner-body-title {
+      color: $secondary;
+    }
+    .banner-body-location {
+      color: $primary;
+    }
+  }
+}
+.banner-btn {
+  @extend %btn;
+  display: none;
+  font-size: 1.5rem;
+  text-align: center;
+
+  font-weight: bold;
+  border-radius: $radius;
+  max-width: 20rem;
+  min-width: 20rem;
+  height: 3rem;
+  margin-right: 20%;
+
+  @include bigPhone-and-higher {
+    display: block;
+  }
+}
+.banner-btn:hover {
+  background-color: $secondary-light;
+  color: black;
+}
+
+.banner-img {
+  img {
+    height: 8rem;
+    width: 8rem;
+    object-fit: cover;
+    border-radius: 50%;
+    animation: apparition-right 0.8s ease-in-out;
+    margin-left: 1rem;
+    @include bigPhone-and-higher {
+      height: 12rem;
+      width: 12rem;
+      margin-top: 2rem;
+    }
+    @include tablet-and-higher {
+      height: 15rem;
+      width: 15rem;
+    }
+    @include desktop-and-higher {
+      height: 25rem;
+      width: 25rem;
+    }
+  }
+}
+.banner-tags-container {
+  margin-top: 2.5rem;
+  width: 60%;
+  animation: apparition 0.8s ease-in-out;
+}
