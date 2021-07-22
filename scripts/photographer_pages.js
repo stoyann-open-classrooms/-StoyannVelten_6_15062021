@@ -133,7 +133,7 @@ function displayBanner(currentPhotographer) {
   const banerTitle = document.createElement("h1");
   const banerLocation = document.createElement("p");
   const banerTagline = document.createElement("p");
-  const containerTagsBanner = document.createElement("div");
+  const containerTagsBanner = document.createElement("nav");
   const containerImgBanner = document.createElement("div");
   const bannerImg = document.createElement("img");
   const btnModal = document.createElement("button");
@@ -170,6 +170,7 @@ function displayBanner(currentPhotographer) {
     tagsLink.textContent = "#";
     tagsSpan.textContent = el;
     tagsLink.appendChild(tagsSpan);
+    tagsLink.setAttribute("aria-labelledby", `${tag}`);
 
     tagsLink.addEventListener("click", (e) => {
       e.preventDefault();
