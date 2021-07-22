@@ -13,6 +13,7 @@ function openModalForm(currentPhotographer) {
   const formMsgInp = document.querySelector(".msg-inp");
   const errorMessage = document.querySelectorAll(".message-alert");
   const modalClose = document.querySelector(".modal-close");
+  modalClose.focus();
 
   let verifFirst;
   let verifLast;
