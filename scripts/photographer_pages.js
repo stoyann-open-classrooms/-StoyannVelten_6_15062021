@@ -240,7 +240,7 @@ export function displayMediaList() {
     // cardsMediaImg.textContent = `${media.title}`;
 
     const cardsMediaCompteurLike = document.createElement("p");
-    const heartLink = document.createElement("a");
+    const heartLink = document.createElement("button");
     const heart = document.createElement("i");
     cardsMediaCompteurLike.setAttribute("aria-label", `likes`);
     // cardsMedia.setAttribute("role", "link");

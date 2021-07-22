@@ -142,7 +142,6 @@ function displayPhotographers() {
       tagsspan.classList.add("tags");
 
       tagsA.setAttribute("aria-labelledby", `${el}`);
-      cardTags.setAttribute("role", "navigation");
 
       tagsA.href = linkToPage + "&tag=" + el;
     });

@@ -1411,7 +1411,7 @@ header .tag-list {
   }
 }
 
-.photographer-cards footer {
+.photographer-cards nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
