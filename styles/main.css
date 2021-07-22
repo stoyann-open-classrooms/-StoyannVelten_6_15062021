@@ -25,6 +25,11 @@ li {
   list-style: none;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+}
+
 .banner-btn, .btn-modal-mobile {
   background-color: #901c1c;
   color: white;
@@ -1320,6 +1325,7 @@ header .tag-list {
 
 .cards-media-footer .header-like .heart {
   text-align: center;
+  color: #901c1c;
 }
 
 .cards-media-footer .header-like .compteur {
