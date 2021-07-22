@@ -13,7 +13,6 @@ function openModalForm(currentPhotographer) {
   const formMsgInp = document.querySelector(".msg-inp");
   const errorMessage = document.querySelectorAll(".message-alert");
   const modalClose = document.querySelector(".modal-close");
-  modalClose.focus();
 
   let verifFirst;
   let verifLast;
@@ -33,7 +32,8 @@ function openModalForm(currentPhotographer) {
   });
   bannerBtnTablet.addEventListener("click", () => {
     contactModal.style.display = "flex";
-    contactModal.setAttribute("aria-hidden", "true");
+    body.setAttribute("aria-hiden", "true");
+    contactModal.setAttribute("aria-hidden", "false");
     body.classList.remove("no-scrool");
     modalClose.focus();
   });
@@ -138,7 +138,7 @@ function openModalForm(currentPhotographer) {
     const contactModal = document.querySelector(".contact-modal");
     contactModal.style.display = "none";
     contactModal.setAttribute("aria-hidden", "true");
-    body.setAttribute("aria-hiden", "true");
+    body.setAttribute("aria-hiden", "false");
   }
 
   modalClose.addEventListener("click", () => {

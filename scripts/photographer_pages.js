@@ -170,7 +170,7 @@ function displayBanner(currentPhotographer) {
     tagsLink.textContent = "#";
     tagsSpan.textContent = el;
     tagsLink.appendChild(tagsSpan);
-    tagsLink.setAttribute("aria-labelledby", `${tag}`);
+    tagsLink.setAttribute("aria-labelledby", `${el.tag}`);
 
     tagsLink.addEventListener("click", (e) => {
       e.preventDefault();
