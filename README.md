@@ -10,7 +10,7 @@
 
 ### _En cours_
 
-### Le lien vers le deploiment git hub pages : [FISHEYE](https://stoyann-open-classrooms.github.io/Stoyann_Velten_p6_120521/)
+### Le lien vers le deploiment git hub pages : [FISHEYE](https://stoyann-open-classrooms.github.io/-StoyannVelten_6_15062021/)
 
 _Sur ce projet je suis chargé de fournir tout le HTML, le CSS et le JavaScript nécessaires au prototype. Bien que le site web soit un prototype, il doit correspondre aux maquettes et fonctionner correctement._
 
