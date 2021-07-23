@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="./styles/main.css" />
 </head>
 
-<body id="body">
+<body>
     <!-- ________ Loader ________ -->
-    <div class="loader-container">
+    <div class=" loader-container">
         <div class="loader"></div>
     </div>
 
@@ -28,60 +28,61 @@
 
         </div>
     </header>
-    <!-- ________ Main ________ -->
-    <main class="main">
-        <!-- ------ Contact modal ------ -->
-        <section class="contact-modal" role="dialog" aria-hidden="true" aria-label="contact-modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title">Nom dsu photographe</h1>
-                    <button role="button" title="fermer la modale" class="close-btn"><i
-                            class="modal-close fas fa-times"></i></button>
-                </div>
-                <form class="modal-form" id="contact" role="document">
-                    <label for="prenom">Prénom</label>
-                    <input class="firstName-inp" id="prenom" type="text" maxlenght="24" name="first-Name"
-                        aria-label="Entrez votre prénom" />
-                    <span class="message-alert">Vous devez entrer votre prénom !</span>
-                    <label for="nom">Nom</label>
-                    <input class="lastName-inp" id="nom" type="text" maxlenght="24" name="last-Name"
-                        aria-label="Entrez votre nom" />
-                    <span class="message-alert">Vous devez entrer votre nom !</span>
-                    <label for="email">Email<br /></label>
-                    <input class="email-inp" id="email" type="email" name="email"
-                        aria-label="Entrez votre adresse Email" data-error="Vous devez entrer un Email valide !" />
-                    <span class="message-alert">Vous devez entrer un Email valide !
-                    </span>
-                    <label for="msg">Votre Message<br /></label>
-                    <textarea class="msg-inp" id="msg" type="text" name="message"
-                        aria-label="Entrez votre méssage"></textarea>
-                    <span class="message-alert">Votre devez entrer un message ! </span>
-                    <button class="submit-form" type="submit" value="Envoyer" name="Email"
-                        aria-label="Envoyer le message">
-                        Envoyer
-                    </button>
-                </form>
+    <!-- ------ Contact modal ------ -->
+    <section class="contact-modal" role="dialog" aria-describedby="contactez-moi">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h1 class="modal-title">Nom du photographe</h1>
+                <button role="button" title="fermer la modale" class="close-btn"><i
+                        class="modal-close fas fa-times"></i></button>
             </div>
-        </section>
-        <!-- ------ Lightbox modal ------ -->
-        <div class="lightbox-modal" role="dialog" aria-hidden="true" aria-label="lightbox modal">
-            <div class="lightbox-content" role="slider">
-                <div class="container-slides"></div>
-                <div class="commandes">
-                    <button class="left" role="button" aria-label="media precedent">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="right" role="button" aria-label="media suivant">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                    <button class="close" role="button" aria-label="Fermer" focus>
-                        <i class="fas fa-times close-lightbox-media"></i>
-                    </button>
+            <form class="modal-form" id="contact">
+                <label for="prenom">Prénom</label>
+                <input class="firstName-inp" id="prenom" type="text" maxlenght="24" name="first-Name"
+                    aria-label="Entrez votre prénom" />
+                <span class="message-alert">Vous devez entrer votre prénom !</span>
+                <label for="nom">Nom</label>
+                <input class="lastName-inp" id="nom" type="text" maxlenght="24" name="last-Name"
+                    aria-label="Entrez votre nom" />
+                <span class="message-alert">Vous devez entrer votre nom !</span>
+                <label for="email">Email<br /></label>
+                <input class="email-inp" id="email" type="email" name="email" aria-label="Entrez votre adresse Email"
+                    data-error="Vous devez entrer un Email valide !" />
+                <span class="message-alert">Vous devez entrer un Email valide !
+                </span>
+                <label for="msg">Votre Message<br /></label>
+                <textarea class="msg-inp" id="msg" type="text" name="message"
+                    aria-label="Entrez votre méssage"></textarea>
+                <span class="message-alert">Votre devez entrer un message ! </span>
+                <button class="submit-form" type="submit" value="Envoyer" name="Email" aria-label="Envoyer le message">
+                    Envoyer
+                </button>
+            </form>
+        </div>
+    </section>
+    <!-- ------ Lightbox modal ------ -->
+    <div class="lightbox-modal" role="dialog" aria-hidden="true" aria-label="lightbox modal">
+        <div class="lightbox-content" role="slider">
+            <ul class="container-slides"></ul>
+            <div class="commandes">
+                <button class="left" role="button" aria-label="media precedent">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="right" role="button" aria-label="media suivant">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <button class="close" role="button" aria-label="Fermer" focus>
+                    <i class="fas fa-times close-lightbox-media"></i>
+                </button>
 
-                    <h2 class="titre-media-lightbox">Ici le titre du média</h2>
-                </div>
+                <h2 class="titre-media-lightbox">Ici le titre du média</h2>
             </div>
         </div>
+    </div>
+
+    <!-- ________ Main ________ -->
+    <main class="main">
+
         <!-- ------ Banner photographe ------ -->
         <section class="banner" role="banner"></section>
 
@@ -109,7 +110,8 @@
 
         <!-- ------Cards media container ------ -->
         <div class="cards-media-container"></div>
-        <button class="btn-modal-mobile" role="button">Contacter-moi</button>
+        <button class="btn-modal-mobile" role="button">Contacter-moi <span class="sr-only">Ouvrir le formulaire de
+                contact</span></button>
     </main>
 
     <script src="./scripts/photographer_pages.js" type="module"></script>

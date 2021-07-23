@@ -151,7 +151,8 @@ function displayBanner(currentPhotographer) {
   bannerImg.src = linkToPhoto;
   banerTitle.setAttribute("lang", "en");
   bannerImg.setAttribute("alt", `${currentPhotographer.name}`);
-
+  containerTagsBanner.setAttribute("role", "button");
+  containerTagsBanner.setAttribute("aria-label", "filtrer les medias par");
   // ajout du contenu html
   banerTitle.textContent = currentPhotographer.name;
   banerLocation.textContent =
@@ -170,7 +171,8 @@ function displayBanner(currentPhotographer) {
     tagsLink.textContent = "#";
     tagsSpan.textContent = el;
     tagsLink.appendChild(tagsSpan);
-    tagsLink.setAttribute("aria-labelledby", `${el.tag}`);
+    tagsSpan.id = `${el}`;
+    tagsLink.setAttribute("aria-labelledby", `${el}`);
 
     tagsLink.addEventListener("click", (e) => {
       e.preventDefault();
@@ -185,6 +187,7 @@ function displayBanner(currentPhotographer) {
 
   // ajout des elements dans le DOM
   banner.append(banerBody, btnModal, containerImgBanner);
+
   banerBody.append(
     banerTitle,
     banerLocation,
@@ -233,11 +236,6 @@ export function displayMediaList() {
     const cardsMediaFooter = document.createElement("div");
     const cardsMediaTitle = document.createElement("p");
     const cardsMediaHeaderLike = document.createElement("div");
-
-    // const playLogo = document.createElement("i");
-    // playLogo.classList.add("fas");
-    // playLogo.classList.add("fa-play-circle");
-    // cardsMediaImg.textContent = `${media.title}`;
 
     const cardsMediaCompteurLike = document.createElement("p");
     const heartLink = document.createElement("button");

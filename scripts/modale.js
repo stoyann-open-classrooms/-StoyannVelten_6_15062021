@@ -21,20 +21,21 @@ function openModalForm(currentPhotographer) {
 
   modalTitle.innerHTML = `Contactez-Moi ${currentPhotographer.name} `;
 
+  const main = document.getElementsByClassName(".main");
   //open modal
   btnModalMobile.addEventListener("click", () => {
-    const body = document.getElementById("body");
-    body.setAttribute("aria-hiden", "true");
+    main.setAttribute = ("aria-hidden", "true");
     contactModal.style.display = "flex";
-    contactModal.setAttribute("aria-hidden", "false");
+    contactModal.setAttribute = ("aria-hidden", "false");
+    // contactModal.classList.add("anticscroll");
 
     modalClose.focus();
   });
   bannerBtnTablet.addEventListener("click", () => {
     contactModal.style.display = "flex";
-    body.setAttribute("aria-hiden", "true");
-    contactModal.setAttribute("aria-hidden", "false");
-    body.classList.remove("no-scrool");
+    contactModal.setAttribute = ("aria-hidden", "false");
+    main.setAttribute = ("aria-hidden", "true");
+
     modalClose.focus();
   });
   formFirstNameInp.addEventListener("input", (e) => {
@@ -137,8 +138,9 @@ function openModalForm(currentPhotographer) {
   function closeModal() {
     const contactModal = document.querySelector(".contact-modal");
     contactModal.style.display = "none";
-    contactModal.setAttribute("aria-hidden", "true");
-    body.setAttribute("aria-hiden", "false");
+    contactModal.setAttribute = ("aria-hidden", "true");
+    main.setAttribute = ("aria-hidden", "false");
+    contactModal.focus();
   }
 
   modalClose.addEventListener("click", () => {
