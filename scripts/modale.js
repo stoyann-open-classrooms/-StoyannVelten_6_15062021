@@ -2,6 +2,25 @@
  * @module modale
  */
 
+function openDialog() {
+  const dialog = document.querySelector(".dialog");
+  const main = document.querySelector(".main");
+  const closeBtn = document.querySelector(".close-btn");
+  const dialogMask = document.querySelector(".dialog-mask");
+
+  console.log("ok");
+  dialog.classList.add("opened");
+  closeBtn.focus();
+  dialogMask.addEventListener("click", closeDialog);
+  main.classList.add("anti-scroll");
+}
+function closeDialog() {
+  const dialog = document.querySelector(".dialog");
+  const main = document.querySelector(".main");
+  dialog.classList.remove("opened");
+  main.classList.remove("anti-scroll");
+}
+
 function verifModal() {
   const formFirstNameInp = document.querySelector(".firstName-inp");
   const formLastNameInp = document.querySelector(".lastName-inp");
@@ -114,4 +133,4 @@ function verifModal() {
   });
 }
 
-export { verifModal };
+export { verifModal, openDialog, closeDialog };

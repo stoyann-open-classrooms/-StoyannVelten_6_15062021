@@ -885,8 +885,6 @@ header .tag-list {
   background-color: #db8876;
   padding: 2rem;
   border-radius: 0.6rem;
-  -webkit-animation: apparition-down 0.8s ease-in-out;
-          animation: apparition-down 0.8s ease-in-out;
   color: black;
 }
 
@@ -905,6 +903,7 @@ header .tag-list {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   z-index: 150;
+  width: 100%;
 }
 
 .dialog-windows input {
@@ -917,8 +916,7 @@ header .tag-list {
 
 @media screen and (min-width: 42.5rem) {
   .dialog-windows {
-    height: auto;
-    margin: auto;
+    max-width: 380px;
   }
 }
 
@@ -1043,6 +1041,11 @@ header .tag-list {
   background: rgba(107, 107, 107, 0.7);
   overflow: hiden;
   z-index: 100;
+}
+
+.anti-scroll {
+  height: 90vh;
+  overflow-y: hidden;
 }
 
 .total-likes-container {

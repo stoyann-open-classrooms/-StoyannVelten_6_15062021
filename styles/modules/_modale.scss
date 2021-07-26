@@ -23,7 +23,7 @@
   background-color: $secondary-light;
   padding: 2rem;
   border-radius: $radius;
-  animation: apparition-down 0.8s ease-in-out;
+
   color: black;
 }
 
@@ -39,6 +39,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 150;
+  width: 100%;
 
   input {
     border-radius: $radius;
@@ -48,8 +49,7 @@
     padding: 0.5rem;
   }
   @include bigPhone-and-higher {
-    height: auto;
-    margin: auto;
+    max-width: 380px;
   }
 
   .close-btn {
@@ -146,4 +146,9 @@
   background: rgba($color: rgb(107, 107, 107), $alpha: 0.7);
   overflow: hiden;
   z-index: 100;
+}
+
+.anti-scroll {
+  height: 90vh;
+  overflow-y: hidden;
 }
