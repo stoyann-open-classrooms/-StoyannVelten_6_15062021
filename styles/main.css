@@ -669,7 +669,7 @@ header .tag-list {
   display: none;
 }
 
-.lightbox-modal {
+.lightbox {
   display: none;
   position: fixed;
   z-index: 999999;
@@ -680,7 +680,7 @@ header .tag-list {
   background: rgba(219, 219, 219, 0.7);
 }
 
-.lightbox-modal .lightbox-content {
+.lightbox .lightbox-windows {
   color: #901c1c;
   width: 100%;
   height: 100%;
@@ -690,13 +690,13 @@ header .tag-list {
 }
 
 @media screen and (min-width: 76.8rem) {
-  .lightbox-modal .lightbox-content {
+  .lightbox .lightbox-windows {
     width: 100%;
     height: 100%;
   }
 }
 
-.lightbox-modal .lightbox-content .container-slides {
+.lightbox .lightbox-windows .container-slides {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -714,11 +714,11 @@ header .tag-list {
   overflow: hidden;
 }
 
-.lightbox-modal .lightbox-content .container-slides .active {
+.lightbox .lightbox-windows .container-slides .active {
   opacity: 1 !important;
 }
 
-.lightbox-modal .lightbox-content .container-slides img {
+.lightbox .lightbox-windows .container-slides img {
   margin: auto;
   height: 85%;
   width: 70%;
@@ -729,7 +729,7 @@ header .tag-list {
      object-fit: cover;
 }
 
-.lightbox-modal .lightbox-content .container-slides video {
+.lightbox .lightbox-windows .container-slides video {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -743,14 +743,14 @@ header .tag-list {
      object-fit: cover;
 }
 
-.lightbox-modal .lightbox-content .commandes {
+.lightbox .lightbox-windows .commandes {
   top: 0px;
   width: 100%;
   height: 100%;
   position: absolute;
 }
 
-.lightbox-modal .lightbox-content .commandes .close {
+.lightbox .lightbox-windows .commandes .close {
   position: absolute;
   border: none;
   background-color: transparent;
@@ -762,8 +762,8 @@ header .tag-list {
   color: #901c1c;
 }
 
-.lightbox-modal .lightbox-content .commandes .right,
-.lightbox-modal .lightbox-content .commandes .left {
+.lightbox .lightbox-windows .commandes .right,
+.lightbox .lightbox-windows .commandes .left {
   position: absolute;
   width: 60px;
   height: 100px;
@@ -781,32 +781,32 @@ header .tag-list {
   cursor: pointer;
 }
 
-.lightbox-modal .lightbox-content .commandes .right i,
-.lightbox-modal .lightbox-content .commandes .left i {
+.lightbox .lightbox-windows .commandes .right i,
+.lightbox .lightbox-windows .commandes .left i {
   font-size: 40px;
   position: relative;
   color: #901c1c;
 }
 
-.lightbox-modal .lightbox-content .commandes button:nth-child(1) {
+.lightbox .lightbox-windows .commandes button:nth-child(1) {
   top: 40%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
   left: 10%;
 }
 
-.lightbox-modal .lightbox-content .commandes button:nth-child(1) i {
+.lightbox .lightbox-windows .commandes button:nth-child(1) i {
   left: -10px;
 }
 
-.lightbox-modal .lightbox-content .commandes button:nth-child(2) {
+.lightbox .lightbox-windows .commandes button:nth-child(2) {
   top: 40%;
   -webkit-transform: translate(50%);
           transform: translate(50%);
   right: 7%;
 }
 
-.lightbox-modal .lightbox-content .commandes button:nth-child(2) i {
+.lightbox .lightbox-windows .commandes button:nth-child(2) i {
   right: 7%;
 }
 
@@ -883,6 +883,7 @@ header .tag-list {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #db8876;
+  height: 100%;
   padding: 2rem;
   border-radius: 0.6rem;
   color: black;
@@ -917,6 +918,7 @@ header .tag-list {
 @media screen and (min-width: 42.5rem) {
   .dialog-windows {
     max-width: 380px;
+    height: auto;
   }
 }
 

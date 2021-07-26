@@ -21,6 +21,7 @@
   justify-content: center;
   flex-direction: column;
   background-color: $secondary-light;
+  height: 100%;
   padding: 2rem;
   border-radius: $radius;
 
@@ -50,6 +51,7 @@
   }
   @include bigPhone-and-higher {
     max-width: 380px;
+    height: auto;
   }
 
   .close-btn {

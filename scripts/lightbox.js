@@ -1,6 +1,6 @@
 function displayLightbox(media, displayMediaList, currentPhotographer) {
   let currentMedia = media;
-  const lightboxModal = document.querySelector(".lightbox-modal");
+  const lightboxModal = document.querySelector(".lightbox");
   const slideContainer = document.querySelector(".container-slides");
   const closeBtn = document.querySelector(".close-lightbox-media");
   const next = document.querySelector(".right");
@@ -55,11 +55,17 @@ function displayLightbox(media, displayMediaList, currentPhotographer) {
   }
 
   function openLightbox() {
+    const main = document.querySelector(".main");
+
     lightboxModal.style.display = "flex";
+
+    main.classList.add("anti-scroll");
   }
 
   function closelightbox() {
+    const main = document.querySelector(".main");
     lightboxModal.style.display = "none";
+    main.classList.remove("anti-scroll");
   }
 
   displayContent();

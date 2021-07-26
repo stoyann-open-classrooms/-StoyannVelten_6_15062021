@@ -1,4 +1,4 @@
-.lightbox-modal {
+.lightbox {
   display: none;
   position: fixed;
   z-index: 999999;
@@ -8,7 +8,7 @@
   height: 100%;
   background: rgba($color: rgb(219, 219, 219), $alpha: 0.7);
 
-  .lightbox-content {
+  .lightbox-windows {
     color: $primary;
     width: 100%;
     height: 100%;

@@ -8,17 +8,20 @@ function openDialog() {
   const closeBtn = document.querySelector(".close-btn");
   const dialogMask = document.querySelector(".dialog-mask");
 
-  console.log("ok");
   dialog.classList.add("opened");
   closeBtn.focus();
   dialogMask.addEventListener("click", closeDialog);
   main.classList.add("anti-scroll");
+  main.setAttribute("aria-hidden", "true");
+  dialog.setAttribute("aria-hidden", "false");
 }
 function closeDialog() {
   const dialog = document.querySelector(".dialog");
   const main = document.querySelector(".main");
   dialog.classList.remove("opened");
   main.classList.remove("anti-scroll");
+  main.setAttribute("aria-hidden", "false");
+  dialog.setAttribute("aria-hidden", "true");
 }
 
 function verifModal() {

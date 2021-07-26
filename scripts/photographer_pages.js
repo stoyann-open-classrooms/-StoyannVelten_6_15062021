@@ -1,7 +1,3 @@
-/**
- * @module photographer-pages
- */
-// test
 import { Photographers } from "./Photographers.js";
 import { MediumList } from "./MediumList.js";
 import { Medium } from "./Medium.js";
@@ -12,36 +8,13 @@ import { openDialog, closeDialog, verifModal } from "./modale.js";
 
 const linkToData = "data/FishEyeDataFR.json";
 const loader = document.querySelector(".loader-container");
-
 const urlParams = new URLSearchParams(window.location.search);
 const mediaList = new MediumList();
 const main = document.querySelector(".main");
-/**
- * @name mediaFactory
- * @type {object}
- * @description une instance de la classe mediums image ou videos
- */
+
 let mediaFactory = new Medium();
-/**
- * @name currentPhotographer
- * @type {object}
- * @description informations sur le photographe courant
- *
- */
 let currentPhotographer;
-/**
- * @name totalLikes
- * @type {Array<number>}
- * @description Nonbres de likes de chaque médias
- *
- */
 let totalLikes = [];
-/**
- * @name totalLikesPhotographer
- * @type {number}
- * @description Nonbres de likes total du photographe courant
- *
- */
 let totalLikesPhotographer;
 
 window.addEventListener("load", () => {
@@ -64,8 +37,9 @@ window.addEventListener("load", () => {
     loader.className += " hidden";
   }, 2000);
 });
-
+// création des données a afficher sur la page
 function createData(data) {
+  // créer un objet photographe si l'id est egale a l'id de l'adresse
   data.photographers.forEach((photographer) => {
     if (photographer.id === Number(urlParams.get("id"))) {
       currentPhotographer = new Photographers(
@@ -80,7 +54,7 @@ function createData(data) {
       );
     }
   });
-
+  // recupere les medias du phototographe courant
   data.media.forEach((media) => {
     if (media.photographerId === currentPhotographer.id) {
       media.getLikes;
@@ -103,25 +77,9 @@ function createData(data) {
   });
 }
 
-/** display mediaList
- * @property {function} displaymediaList  créer et affiche les cards medias filtrer selon le ou les tags sélèctioner par l'uttilisateur
- *
- * @returns  {filters}
- */
 export function displayMediaList() {
-  /**
-   * @name displayMediaList
-   * @type {Array<object>}
-   * @description Liste des medias filtrer selon le ou les tags sélèctioner par l'uttilisateur
-   *
-   */
   let displayMediaList = [];
-  /**
-   * @name filters
-   * @type {array}
-   * @description tableau contenant les tags selectionne par l'uttilisateur
-   *
-   */
+
   const filters = [];
   const cardsMediaContainer = document.querySelector(".cards-media-container");
   const sort = document
@@ -215,7 +173,6 @@ export function displayMediaList() {
         console.log(e);
       }
     });
-    // return filters;
   });
 }
 
