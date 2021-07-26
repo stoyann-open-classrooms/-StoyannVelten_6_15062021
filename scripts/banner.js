@@ -11,7 +11,7 @@ function displayBanner(currentPhotographer, displayMediaList) {
     "./sources/img/1_small/PhotographersID/" + currentPhotographer.portrait;
 
   //  création des elements html
-  const banerBody = document.createElement("section");
+  const banerBody = document.createElement("div");
   const banerTitle = document.createElement("h1");
   const banerLocation = document.createElement("p");
   const banerTagline = document.createElement("p");
@@ -21,11 +21,30 @@ function displayBanner(currentPhotographer, displayMediaList) {
   const btnModal = document.createElement("button");
   const banner = document.querySelector(".banner");
 
+  btnModal.addEventListener("click", (e) => {
+    const dialog = document.querySelector(".dialog");
+    const main = document.querySelector(".main");
+    const closeBtn = document.querySelector(".close-btn");
+    const dialogMask = document.querySelector(".dialog-mask");
+
+    dialog.classList.add("opened");
+    closeBtn.focus();
+    dialogMask.addEventListener("click", (e) => {
+      const dialog = document.querySelector(".dialog");
+      const main = document.querySelector(".main");
+      dialog.classList.remove("opened");
+      main.classList.remove("anti-scroll");
+      main.setAttribute("aria-hidden", "false");
+      dialog.setAttribute("aria-hidden", "true");
+    });
+    main.classList.add("anti-scroll");
+    main.setAttribute("aria-hidden", "true");
+    dialog.setAttribute("aria-hidden", "false");
+  });
   // ajouts des classes et attributs html
 
   banerBody.classList.add("banner-body");
   btnModal.classList.add("banner-btn");
-
   containerImgBanner.classList.add("banner-img");
   banerTitle.classList.add("banner-body-title");
   banerLocation.classList.add("banner-body-location");
@@ -33,34 +52,25 @@ function displayBanner(currentPhotographer, displayMediaList) {
   banerTagline.classList.add("banner-body-tagline");
   bannerImg.src = linkToPhoto;
   banerTitle.setAttribute("lang", "en");
-  bannerImg.setAttribute("alt", `${currentPhotographer.name}`);
-  containerTagsBanner.setAttribute("role", "navigation");
-  btnModal.setAttribute("role", "button");
-  banner.setAttribute("role", "banner");
+  //   bannerImg.setAttribute("alt", `${currentPhotographer.name}`);
 
-  containerTagsBanner.setAttribute("aria-label", "filtrer les medias par");
-  // ajout du contenu html
   banerTitle.textContent = currentPhotographer.name;
   banerLocation.textContent =
     currentPhotographer.city + " ," + currentPhotographer.country;
   banerTagline.textContent = currentPhotographer.tagline;
   btnModal.textContent = "Contacter-moi";
 
-  // ajouts des tags
+  // ajout des tags
   currentPhotographer.tags.forEach((el) => {
     const tagsLink = document.createElement("a");
     const tagsSpan = document.createElement("span");
     containerTagsBanner.classList.add("banner-tags-container");
     tagsLink.classList.add("tags-link");
     tagsSpan.classList.add("tags");
-    containerTagsBanner.appendChild(tagsLink);
+    tagsLink.id = `${el}`;
+
     tagsLink.textContent = "#";
     tagsSpan.textContent = el;
-    tagsLink.setAttribute("role", "button");
-    tagsLink.appendChild(tagsSpan);
-    // tagsSpan.setAttribute("aria-labelledby", `${el}`);
-
-    tagsLink.id = `${el}`;
 
     tagsLink.addEventListener("click", (e) => {
       e.preventDefault();
@@ -71,6 +81,8 @@ function displayBanner(currentPhotographer, displayMediaList) {
     if (urlParams.get("tag") && urlParams.get("tag") === el) {
       tagsLink.classList.toggle("tag--selected");
     }
+    tagsLink.appendChild(tagsSpan);
+    containerTagsBanner.appendChild(tagsLink);
   });
 
   // ajout des elements dans le DOM
