@@ -871,37 +871,43 @@ header .tag-list {
   }
 }
 
-.contact-modal {
-  display: none;
+.dialog-windows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100%;
-  background: rgba(107, 107, 107, 0.7);
-  overflow: auto;
-}
-
-.modal-content {
-  display: block;
   background-color: #db8876;
-  margin: auto;
-  border: 0.1rem solid #888;
   padding: 2rem;
-  height: 100%;
-  max-width: 480px;
   border-radius: 0.6rem;
   -webkit-animation: apparition-down 0.8s ease-in-out;
           animation: apparition-down 0.8s ease-in-out;
   color: black;
 }
 
-.modal-content input {
+.dialog.opened {
+  display: block;
+}
+
+.dialog {
+  display: none;
+}
+
+.dialog-windows {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 150;
+}
+
+.dialog-windows input {
   border-radius: 0.6rem;
   border: none;
   height: 3rem;
@@ -910,18 +916,18 @@ header .tag-list {
 }
 
 @media screen and (min-width: 42.5rem) {
-  .modal-content {
+  .dialog-windows {
     height: auto;
     margin: auto;
   }
 }
 
-.modal-content .close-btn {
+.dialog-windows .close-btn {
   background-color: transparent;
   border: none;
 }
 
-.modal-content .close-btn i {
+.dialog-windows .close-btn i {
   font-size: 3rem;
   color: white;
   cursor: pointer;
@@ -929,7 +935,7 @@ header .tag-list {
   top: -45%;
 }
 
-.modal-content div {
+.dialog-windows div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -939,12 +945,12 @@ header .tag-list {
           justify-content: space-between;
 }
 
-.modal-content div h3 {
+.dialog-windows div h3 {
   font-size: 3rem;
   font-weight: 500;
 }
 
-.modal-content form {
+.dialog-windows form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -958,11 +964,11 @@ header .tag-list {
   margin-top: 3rem;
 }
 
-.modal-content label {
+.dialog-windows label {
   margin: 1rem 0;
 }
 
-.modal-content textarea {
+.dialog-windows textarea {
   border-radius: 0.6rem;
   border: none;
   height: 15rem;
@@ -970,7 +976,7 @@ header .tag-list {
   padding: 0.5rem;
 }
 
-.modal-content .submit-form {
+.dialog-windows .submit-form {
   background-color: #901c1c;
   color: white;
   padding: 1rem;
@@ -985,13 +991,13 @@ header .tag-list {
   transition: all 0.3s ease-in-out;
 }
 
-.modal-content .submit-form:hover {
+.dialog-windows .submit-form:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
 @media screen and (min-width: 76.8rem) {
-  .modal-content .submit-form {
+  .dialog-windows .submit-form {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
@@ -1026,6 +1032,17 @@ header .tag-list {
 .modal-title {
   font-size: 3.3rem;
   width: 70%;
+}
+
+.dialog-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(107, 107, 107, 0.7);
+  overflow: hiden;
+  z-index: 100;
 }
 
 .total-likes-container {
@@ -1417,7 +1434,7 @@ header .tag-list {
   }
 }
 
-.photographer-cards nav {
+.photographer-cards .footer-cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1499,7 +1516,7 @@ input:focus-visible,
 textarea:focus-visible,
 p:focus-visible,
 a:focus-visible {
-  outline: 3px dashed #d3573c;
+  outline: 3px solid #d3573c;
 }
 
 .anticscroll {

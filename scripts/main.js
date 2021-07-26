@@ -120,7 +120,7 @@ function displayPhotographers() {
       "./sources/img/1_small/PhotographersID/" + photographer.portrait;
     const cardPhotographer = document.createElement("section");
     const cardPhotographerHeader = document.createElement("header");
-    const cardPhotographerFooter = document.createElement("nav");
+    const cardPhotographerFooter = document.createElement("div");
     const cardLink = document.createElement("a");
     const cardImg = document.createElement("img");
     const cardTitle = document.createElement("h2");
@@ -155,6 +155,7 @@ function displayPhotographers() {
     cardPrice.classList.add("cards-price");
     modalBg.classList.add("modal");
     cardBody.classList.add("cards-body");
+    cardPhotographerFooter.classList.add("footer-cards");
 
     cardLink.setAttribute("role", "link");
     cardLink.href = linkToPage;

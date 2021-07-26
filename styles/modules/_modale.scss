@@ -16,31 +16,30 @@
     display: none;
   }
 }
-
-.contact-modal {
-  display: none;
+.dialog-windows {
+  display: flex;
+  justify-content: center;
   flex-direction: column;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100%;
-  background: rgba($color: rgb(107, 107, 107), $alpha: 0.7);
-  overflow: auto;
-}
-
-.modal-content {
-  display: block;
   background-color: $secondary-light;
-  margin: auto;
-  border: 0.1rem solid #888;
   padding: 2rem;
-  height: 100%;
-  max-width: 480px;
   border-radius: $radius;
   animation: apparition-down 0.8s ease-in-out;
   color: black;
+}
+
+.dialog.opened {
+  display: block;
+}
+.dialog {
+  display: none;
+}
+.dialog-windows {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 150;
+
   input {
     border-radius: $radius;
     border: none;
@@ -136,4 +135,15 @@
 .modal-title {
   font-size: 3.3rem;
   width: 70%;
+}
+
+.dialog-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba($color: rgb(107, 107, 107), $alpha: 0.7);
+  overflow: hiden;
+  z-index: 100;
 }

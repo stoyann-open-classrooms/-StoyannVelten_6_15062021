@@ -29,40 +29,41 @@
         </div>
     </header>
     <!-- ------ Contact modal ------ -->
-    <section class="contact-modal" role="dialog" aria-describedby="contactez-moi">
-        <div class="modal-content ">
+
+    <section class="dialog" role="dialog" aria-labelledby="title">
+        <div class="dialog-windows">
             <div class="modal-header">
-                <h1 class="modal-title">Nom du photographe</h1>
+                <h1 class="modal-title" id="title"></h1>
                 <button role="button" title="fermer la modale" class="close-btn"><i
                         class="modal-close fas fa-times"></i></button>
             </div>
             <form class="modal-form" id="contact">
                 <label for="prenom">Prénom</label>
                 <input class="firstName-inp" id="prenom" type="text" maxlenght="24" name="first-Name"
-                    aria-label="Entrez votre prénom" />
+                    aria-labelledby="prenom" />
                 <span class="message-alert">Vous devez entrer votre prénom !</span>
                 <label for="nom">Nom</label>
                 <input class="lastName-inp" id="nom" type="text" maxlenght="24" name="last-Name"
-                    aria-label="Entrez votre nom" />
-                <span class="message-alert">Vous devez entrer votre nom !</span>
+                    aria-labelledby="nom" />
+                <span class=" message-alert">Vous devez entrer votre nom !</span>
                 <label for="email">Email<br /></label>
-                <input class="email-inp" id="email" type="email" name="email" aria-label="Entrez votre adresse Email"
-                    data-error="Vous devez entrer un Email valide !" />
+                <input class="email-inp" id="email" type="email" name="email" aria-labelledby="email" />
                 <span class="message-alert">Vous devez entrer un Email valide !
                 </span>
                 <label for="msg">Votre Message<br /></label>
-                <textarea class="msg-inp" id="msg" type="text" name="message"
-                    aria-label="Entrez votre méssage"></textarea>
+                <textarea class="msg-inp" id="msg" type="text" name="message" aria-labelledby="id"></textarea>
                 <span class="message-alert">Votre devez entrer un message ! </span>
                 <button class="submit-form" type="submit" value="Envoyer" name="Email" aria-label="Envoyer le message">
                     Envoyer
                 </button>
             </form>
         </div>
+        <div class="dialog-mask"></div>
     </section>
+
     <!-- ------ Lightbox modal ------ -->
-    <div class="lightbox-modal" role="dialog" aria-hidden="true" aria-label="lightbox modal">
-        <div class="lightbox-content" role="slider">
+    <div class="lightbox-modal" role="slider" aria-hidden="true" aria-label="lightbox modal">
+        <div class="lightbox-content">
             <ul class="container-slides"></ul>
             <div class="commandes">
                 <button class="left" role="button" aria-label="media precedent">
@@ -71,7 +72,7 @@
                 <button class="right" role="button" aria-label="media suivant">
                     <i class="fas fa-chevron-right"></i>
                 </button>
-                <button class="close" role="button" aria-label="Fermer" focus>
+                <button class="close" role="button" aria-label="Fermer">
                     <i class="fas fa-times close-lightbox-media"></i>
                 </button>
 
@@ -84,7 +85,7 @@
     <main class="main">
 
         <!-- ------ Banner photographe ------ -->
-        <section class="banner" role="banner"></section>
+        <section class="banner"></section>
 
         <!-- ------ Dropdown Menu ------ -->
         <section class="filter">
@@ -110,7 +111,8 @@
 
         <!-- ------Cards media container ------ -->
         <div class="cards-media-container"></div>
-        <button class="btn-modal-mobile" role="button">Contacter-moi <span class="sr-only">Ouvrir le formulaire de
+        <button class="btn-modal-mobile contact-btn" role="button">Contacter-moi <span class="sr-only">Ouvrir le
+                formulaire de
                 contact</span></button>
     </main>
 

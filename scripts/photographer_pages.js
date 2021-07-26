@@ -6,7 +6,7 @@ import { Photographers } from "./Photographers.js";
 import { MediumList } from "./MediumList.js";
 import { Medium } from "./Medium.js";
 import { displayFilterMenu } from "./dropdown.js";
-import { openModalForm } from "./modale.js";
+import { verifModal } from "./modale.js";
 
 // import { sortByDate, sortByPopularity, sortByTitle } from "./dropdownMenu.js";
 
@@ -143,6 +143,7 @@ function displayBanner(currentPhotographer) {
 
   banerBody.classList.add("banner-body");
   btnModal.classList.add("banner-btn");
+  btnModal.classList.add("contact-btn");
   containerImgBanner.classList.add("banner-img");
   banerTitle.classList.add("banner-body-title");
   banerLocation.classList.add("banner-body-location");
@@ -150,8 +151,10 @@ function displayBanner(currentPhotographer) {
   banerTagline.classList.add("banner-body-tagline");
   bannerImg.src = linkToPhoto;
   banerTitle.setAttribute("lang", "en");
+  //  banerBody.setAttribute("role", "navigation");
   bannerImg.setAttribute("alt", `${currentPhotographer.name}`);
-  containerTagsBanner.setAttribute("role", "button");
+  containerTagsBanner.setAttribute("role", "navigation");
+
   containerTagsBanner.setAttribute("aria-label", "filtrer les medias par");
   // ajout du contenu html
   banerTitle.textContent = currentPhotographer.name;
@@ -171,8 +174,9 @@ function displayBanner(currentPhotographer) {
     tagsLink.textContent = "#";
     tagsSpan.textContent = el;
     tagsLink.appendChild(tagsSpan);
-    tagsSpan.id = `${el}`;
-    tagsLink.setAttribute("aria-labelledby", `${el}`);
+    tagsSpan.setAttribute("aria-labelledby", `${el}`);
+
+    tagsLink.id = `${el}`;
 
     tagsLink.addEventListener("click", (e) => {
       e.preventDefault();
@@ -319,10 +323,32 @@ export function displayMediaList() {
 }
 
 function displayPage() {
+  const dialog = document.querySelector(".dialog");
+  const dialogMask = document.querySelector(".dialog-mask");
+  const dialogWindows = document.querySelector(".dialog-windows");
+  const dialogTile = document.querySelector(".modal-title");
+  const btnContact = document.querySelectorAll(".contact-btn");
+
+  const closeBtn = document.querySelector(".close-btn");
+
   document.title += " - " + currentPhotographer.name;
-  // const cardMediaImg = document.querySelector(".cards-media-img");
+  dialogTile.textContent = `Contacter moi ${currentPhotographer.name}`;
+
+  function openDialog() {
+    console.log("ok");
+    dialog.classList.add("opened");
+    closeBtn.focus();
+    dialogMask.addEventListener("click", closeDialog);
+  }
+  function closeDialog() {
+    dialog.classList.remove("opened");
+  }
+
+  btnContact.forEach((btn) => btn.addEventListener("click", openDialog));
+
+  closeBtn.addEventListener("click", () => closeDialog());
   displayBanner(currentPhotographer);
-  openModalForm(currentPhotographer);
+  verifModal();
   displayFilterMenu(displayMediaList);
   displayTotalLikes(displayMediaList);
   displayMediaList();

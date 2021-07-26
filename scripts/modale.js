@@ -2,42 +2,19 @@
  * @module modale
  */
 
-function openModalForm(currentPhotographer) {
-  const modalTitle = document.querySelector(".modal-title");
-  const btnModalMobile = document.querySelector(".btn-modal-mobile");
-  const bannerBtnTablet = document.querySelector(".banner-btn");
-  const contactModal = document.querySelector(".contact-modal");
+function verifModal() {
   const formFirstNameInp = document.querySelector(".firstName-inp");
   const formLastNameInp = document.querySelector(".lastName-inp");
   const formEmailInp = document.querySelector(".email-inp");
   const formMsgInp = document.querySelector(".msg-inp");
   const errorMessage = document.querySelectorAll(".message-alert");
-  const modalClose = document.querySelector(".modal-close");
 
   let verifFirst;
   let verifLast;
   let verifMail;
   let verifMsg;
 
-  modalTitle.innerHTML = `Contactez-Moi ${currentPhotographer.name} `;
-
-  const main = document.getElementsByClassName(".main");
-  //open modal
-  btnModalMobile.addEventListener("click", () => {
-    main.setAttribute = ("aria-hidden", "true");
-    contactModal.style.display = "flex";
-    contactModal.setAttribute = ("aria-hidden", "false");
-    // contactModal.classList.add("anticscroll");
-
-    modalClose.focus();
-  });
-  bannerBtnTablet.addEventListener("click", () => {
-    contactModal.style.display = "flex";
-    contactModal.setAttribute = ("aria-hidden", "false");
-    main.setAttribute = ("aria-hidden", "true");
-
-    modalClose.focus();
-  });
+  // verifie si les champs de la modal sont bien rempli
   formFirstNameInp.addEventListener("input", (e) => {
     if (e.target.value.length <= 3) {
       errorMessage[0].style.display = "inline";
@@ -128,29 +105,13 @@ function openModalForm(currentPhotographer) {
       modalValidationMsg.append(validationTxt);
       validationTxt.innerHTML = `Votre message a bien été envoyé à <br> ${currentPhotographer.name} `;
 
+      // log des information entrée par l'uttisatteur
       let datas = new FormData(bannerModal);
       for (let i of datas.entries()) {
         console.log(i[0], ":", i[1]);
       }
     }
   });
-
-  function closeModal() {
-    const contactModal = document.querySelector(".contact-modal");
-    contactModal.style.display = "none";
-    contactModal.setAttribute = ("aria-hidden", "true");
-    main.setAttribute = ("aria-hidden", "false");
-    contactModal.focus();
-  }
-
-  modalClose.addEventListener("click", () => {
-    closeModal();
-  });
-  contactModal.addEventListener("keydown", (e) => {
-    if (e.code === "Escape") {
-      closeModal(e);
-    }
-  });
 }
 
-export { openModalForm };
+export { verifModal };
