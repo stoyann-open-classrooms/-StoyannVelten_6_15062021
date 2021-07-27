@@ -55,6 +55,7 @@ export class Photo extends Medium {
     const linkToSmalPhoto = `./sources/img/1_small/${photographer}/`;
 
     const cardsMediaImg = document.createElement("img");
+
     cardsMediaImg.src = linkToSmalPhoto + this.link;
     cardsMediaImg.alt = this.alt;
     cardsMediaImg.classList.add("media-img");

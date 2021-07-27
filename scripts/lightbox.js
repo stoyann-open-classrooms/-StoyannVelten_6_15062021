@@ -8,9 +8,10 @@ function displayLightbox(media, displayMediaList, currentPhotographer) {
   const titleMedia = document.querySelector(".titre-media-lightbox");
   const mediaImg = document.createElement("img");
   const mediaVid = document.createElement("video");
-  const lightboxLink = document.querySelectorAll(".media-img");
+  const lightboxLink = document.querySelectorAll(".cards-media-img");
 
   lightboxLink.forEach((link) => link.addEventListener("click", openLightbox));
+
   next.addEventListener("click", nextSlide);
   previous.addEventListener("click", previousSlide);
   closeBtn.addEventListener("click", closelightbox);

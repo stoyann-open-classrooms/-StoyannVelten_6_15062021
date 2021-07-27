@@ -167,10 +167,9 @@ export function displayMediaList() {
     cardsMediaImg.addEventListener("click", () =>
       displayLightbox(media, displayMediaList, currentPhotographer)
     );
-    cardsMediaImg.addEventListener("keydown", (e) => {
-      if (e.code === "Enter") {
+    cardsMediaImg.addEventListener("keyCode", (e) => {
+      if (e.code === "13") {
         displayLightbox(media, displayMediaList, currentPhotographer);
-        console.log(e);
       }
     });
   });
