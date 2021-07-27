@@ -2,7 +2,7 @@ function displayLightbox(media, displayMediaList, currentPhotographer) {
   let currentMedia = media;
   const lightboxModal = document.querySelector(".lightbox");
   const slideContainer = document.querySelector(".container-slides");
-  const closeBtn = document.querySelector(".close-lightbox-media");
+  const closeBtn = document.querySelector(".close");
   const next = document.querySelector(".right");
   const previous = document.querySelector(".left");
   const titleMedia = document.querySelector(".titre-media-lightbox");

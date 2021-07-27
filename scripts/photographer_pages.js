@@ -179,6 +179,7 @@ function displayPage() {
   const dialogTile = document.querySelector(".modal-title");
   const btnContact = document.querySelector(".contact-btn");
   const closeBtn = document.querySelector(".close-btn");
+  closeBtn.href = "#";
 
   document.title += " - " + currentPhotographer.name;
   dialogTile.textContent = `Contacter moi ${currentPhotographer.name}`;
