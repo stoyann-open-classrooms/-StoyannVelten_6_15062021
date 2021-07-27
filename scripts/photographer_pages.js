@@ -194,7 +194,7 @@ function displayPage() {
   });
 
   displayBanner(currentPhotographer, displayMediaList);
-  verifModal();
+  verifModal(currentPhotographer);
   displayFilterMenu(displayMediaList);
   displayInfo(displayMediaList);
   displayMediaList();

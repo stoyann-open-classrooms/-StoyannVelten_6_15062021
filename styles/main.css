@@ -1004,13 +1004,10 @@ header .tag-list {
   }
 }
 
-.modal-validation-msg {
-  display: none;
+.message-valid {
   margin: 0;
-  padding: 2rem;
-  height: 100%;
-  width: 100%;
-  font-size: 3rem;
+  min-height: 550px;
+  font-size: 1.2rem;
 }
 
 .message-alert {

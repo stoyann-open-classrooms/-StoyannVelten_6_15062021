@@ -24,7 +24,7 @@ function closeDialog() {
   dialog.setAttribute("aria-hidden", "true");
 }
 
-function verifModal() {
+function verifModal(currentPhotographer) {
   const formFirstNameInp = document.querySelector(".firstName-inp");
   const formLastNameInp = document.querySelector(".lastName-inp");
   const formEmailInp = document.querySelector(".email-inp");
@@ -113,20 +113,18 @@ function verifModal() {
       verifMail === true &&
       verifMsg === true
     ) {
-      const modalValidationMsg = document.createElement("div");
-      const validationTxt = document.createElement("div");
-      const contactModal = document.querySelector(".modal-content");
+      const contactModal = document.querySelector(".dialog-windows");
       const modalTitle = document.querySelector(".modal-title");
-      validationTxt.classList.add("validation-txt");
-      const bannerModal = document.querySelector("form");
-      bannerModal.style.display = "none";
-      modalTitle.style.display = "none";
-      modalValidationMsg.classList.add("modal-validation-msg");
-      modalValidationMsg.style.display = "flex";
-      contactModal.append(modalValidationMsg);
-      modalValidationMsg.append(validationTxt);
-      validationTxt.innerHTML = `Votre message a bien été envoyé à <br> ${currentPhotographer.name} `;
+      const close = document.querySelector(".close-btn");
 
+      const bannerModal = document.querySelector(".modal-form");
+      bannerModal.style.display = "none";
+      bannerModal.setAttribute("aria-hidden", "true");
+      close.focus();
+      modalTitle.innerHTML = `Votre message a bien été envoyé à <br>${currentPhotographer.name} `;
+      modalTitle.classList.add("message-valid");
+
+      contactModal.append(photographersName);
       // log des information entrée par l'uttisatteur
       let datas = new FormData(bannerModal);
       for (let i of datas.entries()) {
