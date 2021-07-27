@@ -927,7 +927,7 @@ header .tag-list {
   border: none;
 }
 
-.dialog-windows .close-btn i {
+.dialog-windows .close-btn em {
   font-size: 3rem;
   color: white;
   cursor: pointer;
