@@ -14,20 +14,19 @@
 </head>
 
 <body>
-    <!-- ________ Loader ________ -->
+    <!-- loader -->
     <div class=" loader-container">
         <div class="loader"></div>
     </div>
 
 
-    <!-- ------ Contact modal ------ -->
+    <!-- contact Modale -->
 
     <section class="dialog" role="dialog" aria-labelledby="title">
         <div class="dialog-windows">
             <div class="modal-header">
-                <h1 class="modal-title" id="title"></h1>
-                <button role="button" title="fermer la modale" class="close-btn"><em
-                        class="modal-close fas fa-times"></em></button>
+                <h1 class="modal-title" id="title">Title</h1>
+                <button title="fermer la modale" class="close-btn"><em class="modal-close fas fa-times"></em></button>
             </div>
             <form class="modal-form" id="contact">
                 <label for="prenom">Prénom</label>
@@ -54,18 +53,18 @@
         <div class="dialog-mask"></div>
     </section>
 
-    <!-- ------ Lightbox modal ------ -->
+    <!-- lightbox modal -->
     <section class="lightbox" role="dialog" aria-label="lightbox modal">
         <div class="lightbox-windows">
             <ul class="container-slides"></ul>
             <div class="commandes">
-                <button class="left" role="button" aria-label="media precedent">
+                <button class="left" aria-label="media precedent">
                     <em class="fas fa-chevron-left"></em>
                 </button>
-                <button class="right" role="button" aria-label="media suivant">
+                <button class="right" aria-label="media suivant">
                     <em class="fas fa-chevron-right"></em>
                 </button>
-                <button class="close" role="button" aria-label="Fermer Le carrousel">
+                <button class="close" aria-label="Fermer Le carrousel">
                     <em class="fas fa-times close-lightbox-media"></em>
                 </button>
 
@@ -77,23 +76,23 @@
 
 
 
-    <!-- ________ header ________ -->
+    <!-- header -->
     <header>
         <div class="header-top">
-            <a href="./index.html" class="logo" role="link" title="retour a la page d'accueil" id="retour">
+            <a href="./index.html" class="logo" title="retour a la page d'accueil" id="retour">
                 <img src="./sources/logo/logo.svg" alt="Logo fisheye" aria-labelledby="retour" />
             </a>
 
         </div>
     </header>
 
-    <!-- ________ Main ________ -->
+    <!-- main -->
     <main class="main" aria-hidden="false">
 
-        <!-- ------ Banner photographe ------ -->
-        <section class="banner"></section>
+        <!-- Banner photographe -->
+        <div class="banner" role="banner"></div>
 
-        <!-- ------ Dropdown Menu ------ -->
+        <!--  Dropdown Menu -->
         <section class="filter">
             <span id="trierPar">Trier par </span>
             <div class="dropdownMenu">
@@ -115,7 +114,7 @@
             </div>
         </section>
 
-        <!-- ------Cards media container ------ -->
+        <!--Cards media container  -->
         <div class="cards-media-container"></div>
         <button class="btn-modal-mobile contact-btn" role="button">Contacter-moi
             <span class="sr-only">Ouvrir le formulaire de contact</span>
