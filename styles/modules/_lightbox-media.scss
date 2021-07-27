@@ -87,7 +87,7 @@
         align-items: center;
         cursor: pointer;
 
-        i {
+        em {
           font-size: 40px;
           position: relative;
           color: $primary;
@@ -101,7 +101,7 @@
       left: 10%;
     }
 
-    .commandes button:nth-child(1) i {
+    .commandes button:nth-child(1) em {
       left: -10px;
     }
 

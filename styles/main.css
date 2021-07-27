@@ -781,8 +781,8 @@ header .tag-list {
   cursor: pointer;
 }
 
-.lightbox .lightbox-windows .commandes .right i,
-.lightbox .lightbox-windows .commandes .left i {
+.lightbox .lightbox-windows .commandes .right em,
+.lightbox .lightbox-windows .commandes .left em {
   font-size: 40px;
   position: relative;
   color: #901c1c;
@@ -795,7 +795,7 @@ header .tag-list {
   left: 10%;
 }
 
-.lightbox .lightbox-windows .commandes button:nth-child(1) i {
+.lightbox .lightbox-windows .commandes button:nth-child(1) em {
   left: -10px;
 }
 
