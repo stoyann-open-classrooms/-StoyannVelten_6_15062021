@@ -1345,6 +1345,7 @@ header .tag-list {
 .cards-media-footer .header-like .heart {
   text-align: center;
   color: #901c1c;
+  font-size: 2rem;
 }
 
 .cards-media-footer .header-like .compteur {
