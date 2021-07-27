@@ -71,6 +71,7 @@ function displayBanner(currentPhotographer, displayMediaList) {
     tagsLink.setAttribute("role", "button");
     tagsLink.textContent = "#";
     tagsSpan.textContent = el;
+    tagsLink.href = "#";
 
     tagsLink.addEventListener("click", (e) => {
       e.preventDefault();
