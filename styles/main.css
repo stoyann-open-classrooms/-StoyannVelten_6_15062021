@@ -1038,7 +1038,7 @@ header .tag-list {
   height: 100%;
   width: 100%;
   background: rgba(107, 107, 107, 0.7);
-  overflow: hiden;
+  overflow: hidden;
   z-index: 100;
 }
 
@@ -1124,6 +1124,10 @@ header .tag-list {
     font-weight: 500;
   }
   .filter span {
+    margin-right: 2rem;
+    font-size: 2rem;
+  }
+  .filter h3 {
     margin-right: 2rem;
     font-size: 2rem;
   }
