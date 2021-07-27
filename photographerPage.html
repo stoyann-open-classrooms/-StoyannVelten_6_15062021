@@ -19,15 +19,7 @@
         <div class="loader"></div>
     </div>
 
-    <!-- ________ header ________ -->
-    <header>
-        <div class="header-top">
-            <a href="./index.html" class="logo" role="link" title="retour a la page d'accueil" id="retour">
-                <img src="./sources/logo/logo.svg" alt="Logo fisheye" aria-labelledby="retour" />
-            </a>
 
-        </div>
-    </header>
     <!-- ------ Contact modal ------ -->
 
     <section class="dialog" role="dialog" aria-labelledby="title">
@@ -39,19 +31,20 @@
             </div>
             <form class="modal-form" id="contact">
                 <label for="prenom">Prénom</label>
-                <input class="firstName-inp" id="prenom" type="text" maxlenght="24" name="first-Name"
-                    aria-labelledby="prenom" />
+                <input class="firstName-inp" id="prenom" type="text" name="first-Name" aria-labelledby="prenom"
+                    aria-required="true" />
                 <span class="message-alert">Vous devez entrer votre prénom !</span>
                 <label for="nom">Nom</label>
-                <input class="lastName-inp" id="nom" type="text" maxlenght="24" name="last-Name"
-                    aria-labelledby="nom" />
+                <input class="lastName-inp" id="nom" type="text" name="last-Name" aria-labelledby="nom"
+                    aria-required="true" required />
                 <span class=" message-alert">Vous devez entrer votre nom !</span>
                 <label for="email">Email<br /></label>
-                <input class="email-inp" id="email" type="email" name="email" aria-labelledby="email" />
+                <input class="email-inp" id="email" type="email" name="email" aria-labelledby="email" required />
                 <span class="message-alert">Vous devez entrer un Email valide !
                 </span>
                 <label for="msg">Votre Message<br /></label>
-                <textarea class="msg-inp" id="msg" type="text" name="message" aria-labelledby="id"></textarea>
+                <textarea class="msg-inp" id="msg" type="text" name="message" aria-labelledby="id" aria-required="true"
+                    required></textarea>
                 <span class="message-alert">Votre devez entrer un message ! </span>
                 <button class="submit-form" type="submit" value="Envoyer" name="Email" aria-label="Envoyer le message">
                     Envoyer
@@ -83,8 +76,19 @@
 
 
 
+
+    <!-- ________ header ________ -->
+    <header>
+        <div class="header-top">
+            <a href="./index.html" class="logo" role="link" title="retour a la page d'accueil" id="retour">
+                <img src="./sources/logo/logo.svg" alt="Logo fisheye" aria-labelledby="retour" />
+            </a>
+
+        </div>
+    </header>
+
     <!-- ________ Main ________ -->
-    <main class="main">
+    <main class="main" aria-hidden="false">
 
         <!-- ------ Banner photographe ------ -->
         <section class="banner"></section>
@@ -113,10 +117,11 @@
 
         <!-- ------Cards media container ------ -->
         <div class="cards-media-container"></div>
-        <button class="btn-modal-mobile contact-btn" role="button">Contacter-moi <span class="sr-only">Ouvrir le
-                formulaire de
-                contact</span></button>
+        <button class="btn-modal-mobile contact-btn" role="button">Contacter-moi
+            <span class="sr-only">Ouvrir le formulaire de contact</span>
+        </button>
     </main>
+
 
     <script src="./scripts/photographer_pages.js" type="module"></script>
 </body>

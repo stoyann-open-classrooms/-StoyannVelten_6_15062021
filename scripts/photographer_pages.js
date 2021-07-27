@@ -1,6 +1,6 @@
 import { Photographers } from "./Photographers.js";
-import { MediumList } from "./MediumList.js";
 import { Medium } from "./Medium.js";
+import { MediumList } from "./MediumList.js";
 import { displayFilterMenu } from "./dropdown.js";
 import { displayBanner } from "./banner.js";
 import { displayLightbox } from "./lightbox.js";
@@ -117,7 +117,7 @@ export function displayMediaList() {
     heart.classList.add("fa-heart");
 
     cardsMediaCompteurLike.setAttribute("aria-label", `likes`);
-    heartLink.setAttribute("aria-label", "Liker la photo");
+    heartLink.setAttribute("aria-label", "aimer cette photo");
     heartLink.setAttribute("role", "button");
     cardsMediaImg.setAttribute("role", "button");
     cardsMediaImg.setAttribute("title", media.alt);

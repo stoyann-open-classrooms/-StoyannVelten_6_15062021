@@ -1386,10 +1386,6 @@ header .tag-list {
           animation: pulse 1.3s linear;
 }
 
-.cards-media-img {
-  color: white;
-}
-
 .photographer-container {
   display: -webkit-box;
   display: -ms-flexbox;

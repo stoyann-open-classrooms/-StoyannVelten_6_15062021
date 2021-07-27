@@ -52,7 +52,7 @@ function displayBanner(currentPhotographer, displayMediaList) {
   banerTagline.classList.add("banner-body-tagline");
   bannerImg.src = linkToPhoto;
   banerTitle.setAttribute("lang", "en");
-  //   bannerImg.setAttribute("alt", `${currentPhotographer.name}`);
+  bannerImg.setAttribute("alt", `${currentPhotographer.name}`);
 
   banerTitle.textContent = currentPhotographer.name;
   banerLocation.textContent =
@@ -68,7 +68,7 @@ function displayBanner(currentPhotographer, displayMediaList) {
     tagsLink.classList.add("tags-link");
     tagsSpan.classList.add("tags");
     tagsLink.id = `${el}`;
-
+    tagsLink.setAttribute("role", "button");
     tagsLink.textContent = "#";
     tagsSpan.textContent = el;
 
