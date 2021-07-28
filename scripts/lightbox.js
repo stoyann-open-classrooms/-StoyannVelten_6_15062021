@@ -9,9 +9,11 @@ function displayLightbox(media, displayMediaList, currentPhotographer) {
   const mediaImg = document.createElement("img");
   const mediaVid = document.createElement("video");
   const lightboxLink = document.querySelectorAll(".cards-media-img");
-
-  lightboxLink.forEach((link) => link.addEventListener("click", openLightbox));
-
+  //  a corriger
+  lightboxLink.forEach((link) => {
+    link.addEventListener("click", openLightbox);
+    console.log("add-event");
+  });
   next.addEventListener("click", nextSlide);
   previous.addEventListener("click", previousSlide);
   closeBtn.addEventListener("click", closelightbox);

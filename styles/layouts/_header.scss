@@ -36,5 +36,8 @@ header {
     width: 100%;
     flex-wrap: wrap;
     margin-top: 1.5rem;
+    @include tablet-and-higher {
+      margin-top: -5rem;
+    }
   }
 }

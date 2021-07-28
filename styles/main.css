@@ -488,6 +488,12 @@ header .tag-list {
   margin-top: 1.5rem;
 }
 
+@media screen and (min-width: 76.8rem) {
+  header .tag-list {
+    margin-top: -5rem;
+  }
+}
+
 .banner {
   display: -webkit-box;
   display: -ms-flexbox;
