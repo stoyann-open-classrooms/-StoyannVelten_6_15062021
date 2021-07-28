@@ -77,19 +77,12 @@ function displayTags() {
 
   photographerList.getAllTags().forEach((tag) => {
     const a = document.createElement("a");
-    const span = document.createElement("span");
-
-    span.id = `${tag}`;
-    span.textContent = tag;
-    a.textContent = "#";
-    span.classList.add("tags");
-
+    a.innerHTML = `#<span id="portrait href="#" aria-labelledby="${tag}">${tag}</span>`;
     a.classList.add("tags-link");
     a.href = "#";
     a.setAttribute("aria-labelledby", `${tag}`);
-
     tagList.append(a);
-    a.append(span);
+
     //ajoute la classe tag--selected si le tag est selectionner par l'uttilisateur
     a.addEventListener("click", (e) => {
       e.preventDefault();

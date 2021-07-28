@@ -1,9 +1,9 @@
 import { Photographers } from "..//constructor/Photographers.js";
-import { Medium } from "..//constructor/Medium.js";
+import { Medium } from "../constructor/Medium.js";
 import { MediumList } from "../constructor/MediumList.js";
 import { displayFilterMenu } from "../module/dropdown.js";
 import { displayBanner } from "../module/banner.js";
-import { displayLightbox } from "../module/lightbox.js";
+import { displayLightbox, openLightbox } from "../module/lightbox.js";
 import { openDialog, closeDialog, verifModal } from "../module/modale.js";
 
 const linkToData = "data/FishEyeDataFR.json";

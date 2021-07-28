@@ -57,16 +57,6 @@ function displayLightbox(media, displayMediaList, currentPhotographer) {
     displayContent();
   }
 
-  function openLightbox() {
-    const main = document.querySelector(".main");
-    const close = document.querySelector(".close");
-    lightboxModal.style.display = "flex";
-    main.classList.add("anti-scroll");
-    close.focus();
-    console.log(closeBtn);
-    main.style.display = "none";
-  }
-
   function closelightbox() {
     const main = document.querySelector(".main");
     lightboxModal.style.display = "none";
@@ -95,4 +85,13 @@ function displayLightbox(media, displayMediaList, currentPhotographer) {
     }
   }
 }
-export { displayLightbox };
+function openLightbox() {
+  const main = document.querySelector(".main");
+  const close = document.querySelector(".close");
+  lightboxModal.style.display = "flex";
+  main.classList.add("anti-scroll");
+  close.focus();
+  console.log(closeBtn);
+  main.style.display = "none";
+}
+export { displayLightbox, openLightbox };
