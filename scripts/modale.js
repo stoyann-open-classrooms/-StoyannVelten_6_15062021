@@ -124,7 +124,7 @@ function verifModal(currentPhotographer) {
       modalTitle.innerHTML = `Votre message a bien été envoyé à <br>${currentPhotographer.name} `;
       modalTitle.classList.add("message-valid");
 
-      contactModal.append(photographersName);
+      // contactModal.append(photographersName);
       // log des information entrée par l'uttisatteur
       let datas = new FormData(bannerModal);
       for (let i of datas.entries()) {
