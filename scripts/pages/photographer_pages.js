@@ -1,10 +1,10 @@
-import { Photographers } from "./Photographers.js";
-import { Medium } from "./Medium.js";
-import { MediumList } from "./MediumList.js";
-import { displayFilterMenu } from "./dropdown.js";
-import { displayBanner } from "./banner.js";
-import { displayLightbox } from "./lightbox.js";
-import { openDialog, closeDialog, verifModal } from "./modale.js";
+import { Photographers } from "..//constructor/Photographers.js";
+import { Medium } from "..//constructor/Medium.js";
+import { MediumList } from "../constructor/MediumList.js";
+import { displayFilterMenu } from "../module/dropdown.js";
+import { displayBanner } from "../module/banner.js";
+import { displayLightbox } from "../module/lightbox.js";
+import { openDialog, closeDialog, verifModal } from "../module/modale.js";
 
 const linkToData = "data/FishEyeDataFR.json";
 const loader = document.querySelector(".loader-container");

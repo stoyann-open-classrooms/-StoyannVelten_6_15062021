@@ -2,8 +2,8 @@
  * @module main
  */
 
-import { Photographers } from "./Photographers.js";
-import { PhotographerList } from "./photographerList.js";
+import { Photographers } from "../constructor/Photographers.js";
+import { PhotographerList } from "../constructor/photographerList.js";
 /**
  * name photographerList
  * @type {array}
