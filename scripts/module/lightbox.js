@@ -25,31 +25,27 @@ function displayLightbox(media, displayMediaList, currentPhotographer) {
     }
   });
 
-  titleMedia.textContent = `${currentMedia.title}`;
+  // titleMedia.textContent = `${currentMedia.title}`;
   function nextSlide(e) {
     e.preventDefault;
     if (displayMediaList.indexOf(currentMedia) + 1 >= displayMediaList.length) {
       currentMedia = displayMediaList[0];
-      titleMedia.textContent = `${currentMedia.title}`;
     } else {
       currentMedia =
         displayMediaList[displayMediaList.indexOf(currentMedia) + 1];
-      titleMedia.textContent = `${currentMedia.title}`;
     }
-    displayContent();
+    displayContent(currentMedia);
   }
 
   function previousSlide(e) {
     e.preventDefault;
     if (displayMediaList.indexOf(currentMedia) < +0) {
       currentMedia = displayMediaList[displayMediaList.length - 1];
-      titleMedia.textContent = `${currentMedia.title}`;
     } else {
       currentMedia =
         displayMediaList[displayMediaList.indexOf(currentMedia) - 1];
-      titleMedia.textContent = `${currentMedia.title}`;
     }
-    displayContent();
+    displayContent(currentMedia);
   }
 
   function closelightbox() {
@@ -60,19 +56,22 @@ function displayLightbox(media, displayMediaList, currentPhotographer) {
     main.style.display = "block";
   }
 
-  displayContent();
+  displayContent(currentMedia);
   function displayContent() {
     if (currentMedia.type === "jpg") {
       mediaVid.replaceWith(mediaImg);
       mediaImg.src = `sources/img/2_medium/${currentPhotographer.getFolderName()}/${
         currentMedia.link
       }`;
+      titleMedia.textContent = `${currentMedia.title}`;
       mediaImg.alt = currentMedia.alt;
       slideContainer.appendChild(mediaImg);
     } else if (currentMedia.type === "mp4") {
       mediaVid.src = `sources/img/2_medium/${currentPhotographer.getFolderName()}/${
         currentMedia.link
       }`;
+      titleMedia.textContent = `${currentMedia.title}`;
+
       mediaImg.replaceWith(mediaVid);
       mediaVid.setAttribute("alt", currentMedia.alt);
       mediaVid.autoplay = true;

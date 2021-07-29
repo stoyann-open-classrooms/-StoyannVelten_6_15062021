@@ -104,7 +104,6 @@ export function displayMediaList() {
 
     lightboxLink.forEach((link) => {
       link.addEventListener("click", openLightbox);
-      console.log("add-event");
     });
     const cardsMediaCompteurLike = document.createElement("p");
     const heartLink = document.createElement("button");
