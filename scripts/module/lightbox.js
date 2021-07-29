@@ -25,7 +25,6 @@ function displayLightbox(media, displayMediaList, currentPhotographer) {
     }
   });
 
-  // titleMedia.textContent = `${currentMedia.title}`;
   function nextSlide(e) {
     e.preventDefault;
     if (displayMediaList.indexOf(currentMedia) + 1 >= displayMediaList.length) {
@@ -88,7 +87,6 @@ function openLightbox() {
   lightboxModal.style.display = "flex";
   main.classList.add("anti-scroll");
   close.focus();
-  console.log(close);
   main.style.display = "none";
 }
 export { displayLightbox, openLightbox };
