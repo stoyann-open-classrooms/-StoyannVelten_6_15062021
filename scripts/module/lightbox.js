@@ -8,12 +8,7 @@ function displayLightbox(media, displayMediaList, currentPhotographer) {
   const titleMedia = document.querySelector(".titre-media-lightbox");
   const mediaImg = document.createElement("img");
   const mediaVid = document.createElement("video");
-  const lightboxLink = document.querySelectorAll(".cards-media-img");
-  //  a corriger
-  lightboxLink.forEach((link) => {
-    link.addEventListener("click", openLightbox);
-    console.log("add-event");
-  });
+
   next.addEventListener("click", nextSlide);
   previous.addEventListener("click", previousSlide);
   closeBtn.addEventListener("click", closelightbox);
@@ -58,6 +53,7 @@ function displayLightbox(media, displayMediaList, currentPhotographer) {
   }
 
   function closelightbox() {
+    const lightboxModal = document.querySelector(".lightbox");
     const main = document.querySelector(".main");
     lightboxModal.style.display = "none";
     main.classList.remove("anti-scroll");
@@ -88,10 +84,11 @@ function displayLightbox(media, displayMediaList, currentPhotographer) {
 function openLightbox() {
   const main = document.querySelector(".main");
   const close = document.querySelector(".close");
+  const lightboxModal = document.querySelector(".lightbox");
   lightboxModal.style.display = "flex";
   main.classList.add("anti-scroll");
   close.focus();
-  console.log(closeBtn);
+  console.log(close);
   main.style.display = "none";
 }
 export { displayLightbox, openLightbox };

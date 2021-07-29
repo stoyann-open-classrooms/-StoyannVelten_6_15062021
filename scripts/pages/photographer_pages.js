@@ -100,7 +100,12 @@ export function displayMediaList() {
     const cardsMediaFooter = document.createElement("div");
     const cardsMediaTitle = document.createElement("p");
     const cardsMediaHeaderLike = document.createElement("div");
+    const lightboxLink = document.querySelectorAll(".cards-media-img");
 
+    lightboxLink.forEach((link) => {
+      link.addEventListener("click", openLightbox);
+      console.log("add-event");
+    });
     const cardsMediaCompteurLike = document.createElement("p");
     const heartLink = document.createElement("button");
     const heart = document.createElement("i");
