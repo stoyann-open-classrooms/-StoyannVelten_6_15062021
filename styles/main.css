@@ -812,7 +812,7 @@ header .tag-list {
   right: 7%;
 }
 
-.lightbox .lightbox-windows .commandes button:nth-child(2) i {
+.lightbox .lightbox-windows .commandes button:nth-child(2) em {
   right: 7%;
 }
 
@@ -822,7 +822,7 @@ header .tag-list {
   bottom: 2%;
   left: 15%;
   margin: auto;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 

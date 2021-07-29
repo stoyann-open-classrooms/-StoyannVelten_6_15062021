@@ -20,7 +20,7 @@ export class Medium {
    * @returns {object}
    */
   createMedia(type, alt, date, id, link, likes, photographerId, tags, path) {
-    if (type == "jpg") {
+    if (type === "jpg") {
       const photo = new Photo();
       photo.type = type;
       photo.alt = alt;
@@ -34,7 +34,7 @@ export class Medium {
       photo.path = path + link;
 
       return photo;
-    } else if (type == "mp4") {
+    } else if (type === "mp4") {
       const video = new Video();
       video.type = type;
       video.alt = alt;

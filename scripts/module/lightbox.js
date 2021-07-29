@@ -34,18 +34,19 @@ function displayLightbox(media, displayMediaList, currentPhotographer) {
       currentMedia =
         displayMediaList[displayMediaList.indexOf(currentMedia) + 1];
     }
-    displayContent(currentMedia);
+    displayContent();
   }
 
   function previousSlide(e) {
     e.preventDefault;
-    if (displayMediaList.indexOf(currentMedia) < +0) {
+    if (displayMediaList.indexOf(currentMedia) <= +0) {
       currentMedia = displayMediaList[displayMediaList.length - 1];
+      displayContent(currentMedia);
     } else {
       currentMedia =
         displayMediaList[displayMediaList.indexOf(currentMedia) - 1];
+      displayContent(currentMedia);
     }
-    displayContent(currentMedia);
   }
 
   function closelightbox() {
