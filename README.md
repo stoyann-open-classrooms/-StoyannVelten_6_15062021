@@ -8,7 +8,7 @@
 
 ### status du projet:
 
-### _En cours_
+### _ done_
 
 ### Le lien vers le deploiment git hub pages : [FISHEYE](https://stoyann-open-classrooms.github.io/-StoyannVelten_6_15062021/)
 
