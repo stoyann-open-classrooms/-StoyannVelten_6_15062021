@@ -6,11 +6,17 @@
 
 #### _Créez un site accessible pour une plateforme de photographes_
 
-### status du projet:
 
-### _ done_
+#Compétences évaluées#
 
-### Le lien vers le deploiment git hub pages : [FISHEYE](https://stoyann-open-classrooms.github.io/-StoyannVelten_6_15062021/)
+- Ecrire du code JavaScript maintenable
+
+- Assurer l'accessibilité d'un site web
+
+- Gérer les évènements d'un site avec JavaScript
+
+- Développer une application web modulaire avec des design patterns
+- ### Le lien vers le deploiment git hub pages : [FISHEYE](https://stoyann-open-classrooms.github.io/-StoyannVelten_6_15062021/)
 
 _Sur ce projet je suis chargé de fournir tout le HTML, le CSS et le JavaScript nécessaires au prototype. Bien que le site web soit un prototype, il doit correspondre aux maquettes et fonctionner correctement._
 
@@ -29,12 +35,31 @@ _De plus, le site doit respecter les normes suivantes :_
 
 - Le code est lisible. Choisis des noms qui ont un sens pour les variables, les fonctions et les classes. Ajoute des commentaires au code si le nom n'indique pas clairement ce qu’il se passe.
 
-#Compétences évaluées#
 
-- Ecrire du code JavaScript maintenable
 
-- Assurer l'accessibilité d'un site web
+### status du projet:
 
-- Gérer les évènements d'un site avec JavaScript
 
-- Développer une application web modulaire avec des design patterns
+✅ Validé
+
+Commentaires de l'évaluateur  :
+##Livrable
+
+#Points forts :
+
+Projet qui respecte le cahier des charges
+ 
+
+#Axes d'amélioration :
+
+Ne pas hésiter à créer des repertoires pour mieux dispatcher votre code
+Penser à utiliser les templates literals pour le code HTML
+ 
+
+##Soutenance
+
+#Remarques :
+Tres bon travail dans l'ensemble avec implementation d'animations non demandées qui rajoute du charme au projet. Utilisation de la JSdoc.
+
+La mission est validée, félicitations !
+
