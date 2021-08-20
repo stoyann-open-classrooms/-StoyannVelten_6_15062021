@@ -39,27 +39,24 @@ _De plus, le site doit respecter les normes suivantes :_
 
 ### status du projet:
 
-
-✅ Validé
+### ✅ Validé
 
 Commentaires de l'évaluateur  :
 ##Livrable
 
-#Points forts :
+# Points forts :
+_Projet qui respecte le cahier des charges_
 
-Projet qui respecte le cahier des charges
+# Axes d'amélioration :
+_Ne pas hésiter à créer des repertoires pour mieux dispatcher votre code
+Penser à utiliser les templates literals pour le code HTML_
  
 
-#Axes d'amélioration :
+## Soutenance
 
-Ne pas hésiter à créer des repertoires pour mieux dispatcher votre code
-Penser à utiliser les templates literals pour le code HTML
+# Remarques :
+_Tres bon travail dans l'ensemble avec implementation d'animations non demandées qui rajoute du charme au projet. Utilisation de la JSdoc._
  
 
-##Soutenance
-
-#Remarques :
-Tres bon travail dans l'ensemble avec implementation d'animations non demandées qui rajoute du charme au projet. Utilisation de la JSdoc.
-
-La mission est validée, félicitations !
+La mission est validée, félicitations ! ✨
 
